@@ -18,7 +18,6 @@ export default class LineWhiteTextInput extends Component<{}> {
                 style={textstyle}
                 placeholderTextColor={'#777777'}
                 underlineColorAndroid={'white'}
-                placeholder="Mencari Lokasi"
                 selectionColor={'#777777'}
             />
         )

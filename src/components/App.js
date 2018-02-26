@@ -24,7 +24,7 @@ const navigatorStyle = {
 	//	tabBarButtonColor: 'red',
 	//	tabBarSelectedButtonColor: 'red',
 	//	tabBarBackgroundColor: 'white',
-//	topBarElevationShadowEnabled: false,
+	topBarElevationShadowEnabled: false,
 //	navBarHideOnScroll: true,
 	//	tabBarHidden: true,
 //	navBarBlur: true,
