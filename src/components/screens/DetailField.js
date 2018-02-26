@@ -25,7 +25,7 @@ const LONGITUDE = 0
 const LATITUDE_DELTA = 0.0922
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO
 
-export default class Front extends Component<{}> {
+export default class DetailField extends Component<{}> {
 
 	constructor() {
 		super()
@@ -41,6 +41,8 @@ export default class Front extends Component<{}> {
 	}
 	componentDidMount() {
 		console.log('run')
+		this.props.navigator.setTitle({ title: 'DETAIL LAPANGANKU' })
+
 		navigator.geolocation.getCurrentPosition(
 			(position) => {
 				this.setState({
@@ -69,17 +71,32 @@ export default class Front extends Component<{}> {
 			starCount: rating
 		})
 	}
+/** 
+ 				<MapView
+					provider={PROVIDER_GOOGLE}
+					style={styles.map}
+					region={this.state.region} >
+				</MapView>
 
+*/
 	render() {
 		return (
 			<View style={styles.container}>
-				<View style={styles.search}>
-					<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />
-					<LineWhiteTextInput
-						style={styles.location}
-						placeholder="Cari lapangan"
-					/>
-
+				<View style={styles.searchcontainer}>
+					<View style={styles.search}>
+						<Icon name="ios-locate" size={10} color="#FFFFFF" style={styles.pin} />
+						<LineWhiteTextInput
+							style={styles.location}
+							placeholder="Mulai"
+						/>
+					</View>
+					<View style={styles.search}>
+						<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />
+						<LineWhiteTextInput
+							style={styles.location}
+							placeholder="Finish"
+						/>
+					</View>
 				</View>
 				<MapView
 					provider={PROVIDER_GOOGLE}
@@ -87,28 +104,21 @@ export default class Front extends Component<{}> {
 					region={this.state.region} >
 				</MapView>
 				<View style={styles.foot}>
-					<Text style={styles.title}>Lapangan Futsal</Text>
-					<View style={styles.rating}>
-						<Text style={styles.percent}>4.4</Text>
-						<StarRating
-							disabled={false}
-							maxStars={5}
-							rating={this.state.starCount}
-							starColor={'white'}
-							starSize={20}
-							selectedStar={(rating) => this.onStarRatingPress(rating)}
-						/>
-						<Text style={styles.review}>40 review</Text>
-					</View>
+					<Text style={styles.title}>12 Km</Text>
 				</View>
 			</View>
 		);
 	}
 }
 
-Front.navigatorStyle = {
-	navBarTextColor: 'white',
-	navBarButtonColor: 'white'
+DetailField.navigatorStyle = {
+	statusBarColor: '#222222',
+	statusBarTextColorScheme: 'light',
+	navigationBarColor: 'black',
+	navBarBackgroundColor: '#0a0a0a',
+	navBarTextColor: '#777777',
+	navBarButtonColor: '#777777',
+	navBarTitleTextCentered: true,
 }
 
 const styles = StyleSheet.create({
@@ -119,13 +129,15 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 	},
 	pin: {
-		marginVertical: 20,
+		marginTop: 20,
 		marginRight: 10
 	},
+	searchcontainer: {
+		justifyContent: 'flex-start',
+	},
 	search: {
-		padding: 20,
+		paddingLeft: 20,
 		flexDirection: 'row',
-		marginVertical: 27,
 	},
 	location: {
 		marginRight: 20,
@@ -133,7 +145,7 @@ const styles = StyleSheet.create({
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,
-		height: 420,
+		height: 400,
 //		marginVertical: 56,
 		marginVertical: 110,
 	},
@@ -142,24 +154,10 @@ const styles = StyleSheet.create({
 		color: '#FFFFFF',
 		marginBottom: 5,
 	},
-	rating: {
-		flexDirection: 'row',
-		alignItems: 'flex-start',
-	},
-	percent: {
-		fontSize: 14,
-		color: '#FFFFFF',
-		marginRight: 10
-	},
-	review: {
-		fontSize: 14,
-		color: '#FFFFFF',
-		marginLeft: 10
-	},
 	foot: {
 		flexDirection: 'column',
 		alignItems: 'flex-start',
-		marginBottom: 20,
+		marginBottom: 10,
 		marginLeft: 20,
 	}
 });

@@ -73,6 +73,7 @@ About.navigatorStyle = {
 	navBarBackgroundColor: '#0a0a0a',
 	navBarTextColor: '#777777',
 	navBarButtonColor: '#777777',
+	navBarTitleTextCentered: true,
 }
 
 const styles = StyleSheet.create({

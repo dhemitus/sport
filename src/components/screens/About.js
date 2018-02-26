@@ -10,7 +10,7 @@ import {
 export default class About extends Component<{}> {
 
 	componentWillMount() {
-		this.props.navigator.setTitle({ title: 'ABOUT' })
+		this.props.navigator.setTitle({ title: 'TENTANG WERESPORT' })
 	}
 
 	render() {
@@ -33,6 +33,7 @@ About.navigatorStyle = {
 	navBarBackgroundColor: '#0a0a0a',
 	navBarTextColor: '#777777',
 	navBarButtonColor: '#777777',
+	navBarTitleTextCentered: true,
 }
 
 const styles = StyleSheet.create({

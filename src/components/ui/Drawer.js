@@ -17,6 +17,7 @@ export default class Drawer extends Component {
 	constructor(props) {
 		super(props)
 		this.myField = this.myField.bind(this)
+		this.myDetField = this.myDetField.bind(this)
 		this.splash = this.splash.bind(this)
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
@@ -36,6 +37,13 @@ export default class Drawer extends Component {
 		this.toggleDrawer()
 		this.props.navigator.popToRoot({
 			screen: 'weresport.Front'
+		})
+	}
+
+	myDetField = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.DetailField'
 		})
 	}
 
@@ -85,6 +93,11 @@ export default class Drawer extends Component {
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.myField()}>
 						Lapanganku
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
+						Detail Lapanganku
 					</Text>
 				</View>
 				<View style={styles.drawerListItem}>
