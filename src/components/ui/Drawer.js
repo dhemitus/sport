@@ -18,6 +18,7 @@ export default class Drawer extends Component {
 		super(props)
 		this.myField = this.myField.bind(this)
 		this.myDetField = this.myDetField.bind(this)
+		this.mySectField = this.mySecField.bind(this)
 		this.splash = this.splash.bind(this)
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
@@ -47,6 +48,12 @@ export default class Drawer extends Component {
 		})
 	}
 
+	mySecField = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.SearchField'
+		})
+	}
 	login = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -98,6 +105,11 @@ export default class Drawer extends Component {
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
 						Detail Lapanganku
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.mySecField()}>
+						Mencari Lapangan
 					</Text>
 				</View>
 				<View style={styles.drawerListItem}>
