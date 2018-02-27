@@ -42,6 +42,5 @@ TextButton.defaultProps = {
 const styles = StyleSheet.create({
     inputstyle: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
     }
 })

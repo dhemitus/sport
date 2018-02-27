@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
 		borderColor: '#e4ff64',
 	},
 	formcontainer: {
+		flexDirection:'column',
 		justifyContent: 'center',
 		marginHorizontal: 50,
 	},
