@@ -11,27 +11,38 @@ import {
 
 export default class LineYellowButton extends Component<{}> {
 	render() {
-		let { style, text, onPress } = this.props
+		let { leftSide, rightSide, style, text, onPress } = this.props
 		return (
 			<View style={style}>
 				<TouchableOpacity
 					style={styles.button}
 					onPress={() => onPress()}
 				>
+					{leftSide}
 					<Text style={styles.buttontext}>{text}</Text>
+					{rightSide}
 				</TouchableOpacity>
 			</View>
 		)
 	}
 }
+
 LineYellowButton.propTypes = {
+	leftSide: PropTypes.object,
+	rightSide: PropTypes.object,
 	text: PropTypes.string.isRequired,
 	onPress: PropTypes.func.isRequired
 }
 
+LineYellowButton.defaultProps = {
+	leftSide: <View style={{ flex: 1 }} />,
+	rightSide: <View style={{ flex: 1 }} />,
+	text: '',
+	onPress: () => { },
+}
+
 const styles = StyleSheet.create({
 	button: {
-		fontWeight: 'bold',
 		backgroundColor: '#222222',
 		padding: 10,
 		alignItems: 'center',
@@ -40,6 +51,7 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 	},
 	buttontext: {
+		fontWeight: 'bold',
 		color: '#e4ff64'
 	},
 })

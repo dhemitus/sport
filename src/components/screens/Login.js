@@ -15,6 +15,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Login extends Component<{}> {
 
+	personIcon = () => {
+		return (
+			<Icon name="ios-person" size={20} color="#e4ff64" style={styles.pin} />
+		)
+	}
 	render() {
 		return (
 			<View style={styles.container}>
@@ -40,7 +45,7 @@ export default class Login extends Component<{}> {
 				</View>
 				<View style={styles.formcontainer}>
 					<LineYellowTextInput
-						leftSide={<Icon name="ios-person" size={20} color="#e4ff64" style={styles.pin} />}
+						leftSide={this.personIcon()}
 						placeholder="Alamat Email"
 					/>
 					<View>

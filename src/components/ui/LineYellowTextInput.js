@@ -8,7 +8,7 @@ import {
 	TextInput,
 } from 'react-native'
 
-export default class LineYellowTextInput extends Component<{}> {
+export default class LineYellowTextInput extends Component {
 	render() {
 		let { leftSide, rightSide, style, ...restProps } = this.props
 		let textstyle = styles.inputstyle;
@@ -27,17 +27,6 @@ export default class LineYellowTextInput extends Component<{}> {
 			</View>
 		)
 	}
-}
-LineYellowTextInput.propTypes = {
-	leftSide: <View style={{ flex: 1 }} />,
-	rightSide: <View style={{ flex: 1 }} />,
-	text: '',
-}
-
-LineYellowTextInput.defaultProps = {
-	leftSide: PropTypes.object,
-	rightSide: PropTypes.object,
-	text: PropTypes.string,
 }
 
 const styles = StyleSheet.create({

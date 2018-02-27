@@ -37,7 +37,6 @@ BlockRoundButton.defaultProps = {
 
 const styles = StyleSheet.create({
 	button: {
-		fontWeight: 'bold',
 		backgroundColor: '#e4ff64',
 		paddingVertical: 5,
 		alignItems: 'center',
@@ -45,6 +44,7 @@ const styles = StyleSheet.create({
 		height: 32,
 	},
 	buttontext: {
+		fontWeight: 'bold',
 		color: '#222222'
 	},
 })

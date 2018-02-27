@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
 	search: {
 		padding: 20,
 		flexDirection: 'row',
-		marginVertical: 27,
+		marginVertical: 32,
 	},
 	location: {
 		marginRight: 20,

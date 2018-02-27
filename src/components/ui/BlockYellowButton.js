@@ -31,7 +31,6 @@ BlockYellowButton.propTypes = {
 
 const styles = StyleSheet.create({
 	button: {
-		fontWeight: 'bold',
 		backgroundColor: '#e4ff64',
 		padding: 10,
 		alignItems: 'center',
@@ -40,6 +39,7 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 	},
 	buttontext: {
+		fontWeight: 'bold',
 		color: '#222222'
 	},
 })

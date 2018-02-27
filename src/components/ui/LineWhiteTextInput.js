@@ -29,15 +29,13 @@ export default class LineWhiteTextInput extends Component<{}> {
 	}
 }
 LineWhiteTextInput.propTypes = {
-	leftSide: <View style={{ flex: 1 }} />,
-	rightSide: <View style={{ flex: 1 }} />,
-	text: '',
+	leftSide: PropTypes.object,
+	rightSide: PropTypes.object,
 }
 
 LineWhiteTextInput.defaultProps = {
-	leftSide: PropTypes.object,
-	rightSide: PropTypes.object,
-	text: PropTypes.string.isRequired,
+	leftSide: <View style={{ flex: 1 }} />,
+	rightSide: <View style={{ flex: 1 }} />,
 }
 
 const styles = StyleSheet.create({
