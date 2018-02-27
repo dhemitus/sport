@@ -15,15 +15,15 @@ export default class LineWhiteTextInput extends Component<{}> {
 		textstyle = StyleSheet.flatten([textstyle, style]);
 		return (
 			<View style={styles.container}>
-			{leftSide}
-			<TextInput
-				{...restProps}
-				style={textstyle}
-				placeholderTextColor={'#777777'}
-				underlineColorAndroid={'white'}
-				selectionColor={'#777777'}
-			/>
-			{rightSide}
+				{leftSide}
+				<TextInput
+					{...restProps}
+					style={textstyle}
+					placeholderTextColor={'#777777'}
+					underlineColorAndroid={'white'}
+					selectionColor={'#777777'}
+				/>
+				{rightSide}
 			</View>
 		)
 	}

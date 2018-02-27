@@ -43,7 +43,7 @@ export default class About extends Component<{}> {
 					<Text style={[styles.about, styles.address]}>
 						Kirim Pesan
 					</Text>
-					<View>
+					<View style={styles.inputcontainer}>
 						<LineWhiteTextInput
 							style={styles.inputform}
 							placeholder="Nama"
@@ -95,8 +95,11 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		marginVertical: 10,
 	},
+	inputcontainer: {
+		flex: 1,
+	},
 	inputform: {
-		marginVertical: 10,
+		marginVertical: 5,
 	},
 	buttonform: {
 		marginVertical: 10,

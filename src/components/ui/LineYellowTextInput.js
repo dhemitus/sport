@@ -10,11 +10,12 @@ import {
 
 export default class LineYellowTextInput extends Component<{}> {
 	render() {
-		let { style, ...restProps } = this.props
+		let { leftSide, rightSide, style, ...restProps } = this.props
 		let textstyle = styles.inputstyle;
 		textstyle = StyleSheet.flatten([textstyle, style]);
 		return (
 			<View style={textstyle}>
+				{leftSide}
 				<TextInput
 					{...restProps}
 					placeholderTextColor={'#777777'}
@@ -22,9 +23,21 @@ export default class LineYellowTextInput extends Component<{}> {
 					style={styles.text}
 					selectionColor={'#e4ff64'}
 				/>
+				{rightSide}
 			</View>
 		)
 	}
+}
+LineYellowTextInput.propTypes = {
+	leftSide: <View style={{ flex: 1 }} />,
+	rightSide: <View style={{ flex: 1 }} />,
+	text: '',
+}
+
+LineYellowTextInput.defaultProps = {
+	leftSide: PropTypes.object,
+	rightSide: PropTypes.object,
+	text: PropTypes.string,
 }
 
 const styles = StyleSheet.create({

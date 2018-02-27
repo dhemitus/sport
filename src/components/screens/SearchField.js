@@ -138,7 +138,6 @@ const styles = StyleSheet.create({
 	},
 	location: {
 		marginRight: 20,
-		width: '90%'
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,
