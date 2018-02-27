@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start',
 	},
 	aboutcontainer: {
+		...StyleSheet.absoluteFillObject,
 		margin: 20,
 	},
 	contactcontainer: {
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
 	},
 	inputcontainer: {
 		flex: 1,
+		flexDirection: 'column',
 	},
 	inputform: {
 		marginVertical: 5,
