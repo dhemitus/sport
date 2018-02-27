@@ -107,8 +107,13 @@ export default class Front extends Component<{}> {
 }
 
 Front.navigatorStyle = {
-	navBarTextColor: 'white',
-	navBarButtonColor: 'white'
+	statusBarColor: '#222222',
+	statusBarTextColorScheme: 'light',
+	navigationBarColor: 'black',
+	navBarBackgroundColor: '#0a0a0a',
+	navBarTextColor: '#777777',
+	navBarButtonColor: '#777777',
+	navBarTitleTextCentered: true,
 }
 
 const styles = StyleSheet.create({
@@ -129,7 +134,6 @@ const styles = StyleSheet.create({
 	},
 	location: {
 		marginRight: 20,
-		width: '90%'
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,

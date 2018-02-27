@@ -3,32 +3,48 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
-    StyleSheet,
-    TextInput,
+	StyleSheet,
+	View,
+	TextInput,
 } from 'react-native'
 
 export default class LineWhiteTextInput extends Component<{}> {
-    render() {
-        let { style, ...restProps } = this.props
-        let textstyle = styles.text;
-        textstyle = StyleSheet.flatten([textstyle, style]);
-        return (
-            <TextInput
-                {...restProps}
-                style={textstyle}
-                placeholderTextColor={'#777777'}
-                underlineColorAndroid={'white'}
-                selectionColor={'#777777'}
-            />
-        )
-    }
+	render() {
+		let { leftSide, rightSide, style, ...restProps } = this.props
+		let textstyle = styles.text;
+		textstyle = StyleSheet.flatten([textstyle, style]);
+		return (
+			<View style={styles.container}>
+			{leftSide}
+			<TextInput
+				{...restProps}
+				style={textstyle}
+				placeholderTextColor={'#777777'}
+				underlineColorAndroid={'white'}
+				selectionColor={'#777777'}
+			/>
+			{rightSide}
+			</View>
+		)
+	}
 }
 LineWhiteTextInput.propTypes = {
-    text: PropTypes.string.isRequired,
+	leftSide: <View style={{ flex: 1 }} />,
+	rightSide: <View style={{ flex: 1 }} />,
+	text: '',
+}
+
+LineWhiteTextInput.defaultProps = {
+	leftSide: PropTypes.object,
+	rightSide: PropTypes.object,
+	text: PropTypes.string.isRequired,
 }
 
 const styles = StyleSheet.create({
-    text: {
-        color: 'white',
-    },
+	container: {
+		flex: 1,
+	},
+	text: {
+		color: 'white',
+	},
 })
