@@ -48,8 +48,11 @@ const styles = StyleSheet.create({
 		borderColor: '#e4ff64',
 		borderWidth: 1,
 		borderRadius: 10,
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
 	},
 	text: {
+		flex: 1,
 		color: 'white',
 	},
 })

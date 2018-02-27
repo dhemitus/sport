@@ -29,6 +29,12 @@ BlockRoundButton.propTypes = {
   onPress: PropTypes.func.isRequired
 }
 
+BlockRoundButton.defaultProps = {
+	text: '',
+	onPress: () => { },
+	style: {},
+}
+
 const styles = StyleSheet.create({
 	button: {
 		fontWeight: 'bold',

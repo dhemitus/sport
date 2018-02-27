@@ -6,10 +6,12 @@ import {
 	StyleSheet,
 	Text,
 	Image,
-	View
+	View,
+	TouchableOpacity,
 } from 'react-native'
 import BlockYellowButton from '../ui/BlockYellowButton'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 export default class Login extends Component<{}> {
 
@@ -38,13 +40,26 @@ export default class Login extends Component<{}> {
 				</View>
 				<View style={styles.formcontainer}>
 					<LineYellowTextInput
+						leftSide={<Icon name="ios-person" size={20} color="#e4ff64" style={styles.pin} />}
 						placeholder="Alamat Email"
 					/>
-					<LineYellowTextInput
-						placeholder="Password"
-						secureTextEntry={true}
-					/>
+					<View>
+						<LineYellowTextInput
+							leftSide={<Icon name="ios-key" size={20} color="#e4ff64" style={styles.pin} />}
+							placeholder="Password"
+							secureTextEntry={true}
+						/>
+						<TouchableOpacity>
+							<Text style={styles.subset}>Lupa password?</Text>
+						</TouchableOpacity>
+					</View>
 					<BlockYellowButton style={styles.button} onPress={() => {console.log('klik')}} text={'LOGIN'} />
+					<View style={styles.memberside}>
+						<Text style={styles.yellowtext}>Belum memiliki akun? </Text>
+						<TouchableOpacity>
+							<Text style={styles.yellowtextbold}>DAFTAR</Text>
+						</TouchableOpacity>
+					</View>
 				</View>
 			</View>
 		)
@@ -67,6 +82,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		backgroundColor: '#222222',
 	},
+	pin: {
+		marginTop: 15,
+		marginRight: 10,
+		paddingRight: 10,
+		marginBottom: 15,
+		borderRightWidth: 1,
+		borderColor: '#e4ff64',
+	},
 	formcontainer: {
 		justifyContent: 'center',
 		marginHorizontal: 50,
@@ -78,4 +101,22 @@ const styles = StyleSheet.create({
 	button: {
 		marginVertical: 40,
 	},
+	memberside: {
+		alignItems: 'center',
+		flexDirection: 'row',
+	},
+	yellowtextbold: {
+		textDecorationLine: 'underline',
+		fontWeight: 'bold',
+		color: '#e4ff64'
+	},
+	subset: {
+		marginTop: 5,
+		color: 'white',
+		fontStyle: 'italic',
+	},
+	yellowtext: {
+		color: '#e4ff64'
+	}
+
 })
