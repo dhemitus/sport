@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
 import BlockYellowButton from '../ui/BlockYellowButton'
+import TextButton from '../ui/TextButton'
 
 export default class Splash extends Component<{}> {
 /** 
@@ -67,9 +68,7 @@ export default class Splash extends Component<{}> {
 					<BlockYellowButton style={styles.button} onPress={() => { console.log('klik') }} text={'Daftar'} />
 					<View style={styles.memberside}>
 						<Text style={styles.yellowtext}>Sudah memiliki akun? </Text>
-						<TouchableOpacity>
-							<Text style={styles.yellowtextbold}>MASUK</Text>
-						</TouchableOpacity>
+						<TextButton style={styles.yellowtextbold} text={'MASUK'} />
 					</View>
 				</View>
 			</View>

@@ -10,6 +10,7 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineYellowButton from '../ui/LineYellowButton'
+import TextButton from '../ui/TextButton'
 
 export default class Splash extends Component<{}> {
 
@@ -39,7 +40,7 @@ export default class Splash extends Component<{}> {
 				<View style={styles.formcontainer}>
 					<LineYellowButton style={styles.button} onPress={() => { console.log('klik') }} text={'Mulai'} />
 					<View style={styles.language}>
-						<TouchableOpacity style={styles.languageside}>
+						<TextButton leftSide={
 							<Image
 								style={{
 									width: 20,
@@ -49,9 +50,9 @@ export default class Splash extends Component<{}> {
 								}}
 								source={require('../../assets/images/indonesia.png')}
 							/>
-							<Text style={styles.yellowtextbold}>Bahasa Indonesia</Text>
-						</TouchableOpacity>
-						<TouchableOpacity style={styles.languageside}>
+
+						} style={styles.yellowtextbold} text={'Bahasa Indonesia'} />
+						<TextButton leftSide={
 							<Image
 								style={{
 									width: 20,
@@ -61,8 +62,8 @@ export default class Splash extends Component<{}> {
 								}}
 								source={require('../../assets/images/english.png')}
 							/>
-							<Text style={styles.whitetext}>English</Text>
-						</TouchableOpacity>
+							
+						} style={styles.whitetext} text={'English'} />
 					</View>
 				</View>
 			</View>
@@ -100,16 +101,13 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'flex-start',
 	},
-	languageside: {
-		flexDirection: 'row',
-		marginBottom: 25,
-	},
 	button: {
 		marginVertical: 40,
 	},
 	yellowtextbold: {
 		fontWeight: 'bold',
-		color: '#e4ff64'
+		color: '#e4ff64',
+		marginBottom: 25,
 	},
 	whitetext: {
 		color: '#FFFFFF'
