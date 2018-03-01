@@ -45,7 +45,7 @@ public class MainApplication extends NavigationApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ImagePickerPackage(),
+          new ImagePickerPackage(),
 //          new FBSDKPackage(mCallbackManager),
           new VectorIconsPackage(),
           new RNNotificationsPackage(MainApplication.this),
@@ -89,7 +89,9 @@ public class MainApplication extends NavigationApplication {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
 //        new FBSDKPackage(mCallbackManager),
+        new ImagePickerPackage(),
         new VectorIconsPackage(),
+//        new RNNotificationsPackage(MainApplication.this),
         new MapsPackage()
       );
   }
