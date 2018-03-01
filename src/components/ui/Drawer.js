@@ -23,6 +23,7 @@ export default class Drawer extends Component {
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
 		this.about = this.about.bind(this)
+		this.profile = this.profile.bind(this)
 		this.contact = this.contact.bind(this)
 	}
 
@@ -58,6 +59,12 @@ export default class Drawer extends Component {
 		this.toggleDrawer()
 		this.props.navigator.push({
 			screen: 'weresport.Login'
+		})
+	}
+	profile = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.Profile'
 		})
 	}
 
@@ -130,6 +137,11 @@ export default class Drawer extends Component {
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.about()}>
 						About
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.profile()}>
+						Profile
 					</Text>
 				</View>
 				<View style={styles.drawerListItem}>

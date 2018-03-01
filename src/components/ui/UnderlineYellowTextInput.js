@@ -8,7 +8,7 @@ import {
 	TextInput,
 } from 'react-native'
 
-export default class LineWhiteTextInput extends Component<{}> {
+export default class UnderlineYellowTextInput extends Component<{}> {
 	render() {
 		let { leftSide, rightSide, style, ...restProps } = this.props
 		let textstyle = styles.text;
@@ -20,31 +20,31 @@ export default class LineWhiteTextInput extends Component<{}> {
 					{...restProps}
 					style={textstyle}
 					placeholderTextColor={'#777777'}
-					underlineColorAndroid={'white'}
-					selectionColor={'#777777'}
+					underlineColorAndroid={'#e4ff64'}
+					selectionColor={'#e4ff64'}
 				/>
 				{rightSide}
 			</View>
 		)
 	}
 }
-LineWhiteTextInput.propTypes = {
+UnderlineYellowTextInput.propTypes = {
 	leftSide: PropTypes.object,
 	rightSide: PropTypes.object,
 }
 
-LineWhiteTextInput.defaultProps = {
+UnderlineYellowTextInput.defaultProps = {
 	leftSide: <View style={{ flex: 1 }} />,
 	rightSide: <View style={{ flex: 1 }} />,
 }
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 	},
 	text: {
+		flex: 1,
 		color: 'white',
 	},
 })

@@ -7,7 +7,8 @@ import android.support.annotation.NonNull;
 import com.facebook.CallbackManager;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
-import com.imagepicker.ImagePickerPackage;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.wix.reactnativenotifications.RNNotificationsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -19,6 +20,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.reactnativenavigation.controllers.ActivityCallbacks;
 import com.facebook.FacebookSdk;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -45,10 +47,11 @@ public class MainApplication extends NavigationApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new ImagePickerPackage(),
+            new PickerPackage(),
 //          new FBSDKPackage(mCallbackManager),
           new VectorIconsPackage(),
           new RNNotificationsPackage(MainApplication.this),
+          new PickerPackage(),
           new MapsPackage()
       );
     }
@@ -89,9 +92,9 @@ public class MainApplication extends NavigationApplication {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
 //        new FBSDKPackage(mCallbackManager),
-        new ImagePickerPackage(),
         new VectorIconsPackage(),
 //        new RNNotificationsPackage(MainApplication.this),
+      new PickerPackage(),
         new MapsPackage()
       );
   }

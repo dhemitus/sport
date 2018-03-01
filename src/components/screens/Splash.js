@@ -8,6 +8,8 @@ import {
 	View,
 	Image,
 	TouchableOpacity,
+	PixelRatio,
+	
 } from 'react-native'
 import LineYellowButton from '../ui/LineYellowButton'
 import TextButton from '../ui/TextButton'
@@ -38,7 +40,18 @@ export default class Splash extends Component<{}> {
 					/>
 				</View>
 				<View style={styles.formcontainer}>
-					<LineYellowButton style={styles.button} onPress={() => { console.log('klik') }} text={'Mulai'} />
+					< LineYellowButton style = {
+						styles.button
+					}
+					onPress = {
+						() => {
+							this.pickSingleBase64(true)
+						}
+					}
+					text = {
+						'Mulai'
+					}
+					/>
 					<View style={styles.language}>
 						<TextButton leftSide={
 							<Image
