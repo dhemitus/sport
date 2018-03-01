@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import com.facebook.CallbackManager;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import com.imagepicker.ImagePickerPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.wix.reactnativenotifications.RNNotificationsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -44,6 +45,7 @@ public class MainApplication extends NavigationApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ImagePickerPackage(),
 //          new FBSDKPackage(mCallbackManager),
           new VectorIconsPackage(),
           new RNNotificationsPackage(MainApplication.this),
