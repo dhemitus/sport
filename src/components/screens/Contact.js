@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import LineWhiteTextInput from '../ui/LineWhiteTextInput'
+import UnderlineYellowTextInput from '../ui/UnderlineYellowTextInput'
 import LineYellowButton from '../ui/LineYellowButton'
 
 export default class About extends Component<{}> {
@@ -21,7 +22,7 @@ export default class About extends Component<{}> {
 			<View style={styles.container}>
 				<View style={styles.aboutcontainer}>
 					<Text style={[styles.about, styles.address]}>
-						Alamat
+						Alamat:
 					</Text>
 					<Text style={styles.about}>
 						Grand Slipi Tower, Jl. Letjen S. Parman, RT 1/RW 4, Palmerah, Kota jakarta Barat, daerah Khusus Ibukota Jakarta 11480
@@ -79,8 +80,8 @@ About.navigatorStyle = {
 const styles = StyleSheet.create({
 	container: {
 		...StyleSheet.absoluteFillObject,
+		justifyContent: 'center',
 		backgroundColor: '#222222',
-		alignItems: 'flex-start',
 	},
 	aboutcontainer: {
 		...StyleSheet.absoluteFillObject,
@@ -97,7 +98,6 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 	},
 	inputcontainer: {
-		flex: 1,
 		flexDirection: 'column',
 	},
 	inputform: {

@@ -12,6 +12,7 @@ import {
 } from 'react-native'
 import LineYellowButton from '../ui/LineYellowButton'
 import UnderlineYellowTextInput from '../ui/UnderlineYellowTextInput'
+import LineYellowTextInput from '../ui/LineYellowTextInput'
 import Icon from 'react-native-vector-icons/Ionicons'
 import TextButton from '../ui/TextButton'
 const ImagePicker = NativeModules.ImageCropPicker
@@ -72,12 +73,14 @@ export default class Profile extends Component<{}> {
 				</View>
 				<View style={styles.formcontainer}>
 					<UnderlineYellowTextInput
+						style={styles.input}
 						leftSide={this.personIcon()}
 						placeholder="Alamat Email"
 					/>
 					<UnderlineYellowTextInput
-							leftSide={<Icon name="ios-key" size={20} color="#222222" style={styles.pin} />}
-							placeholder="Tanggal Lahir"
+						style={styles.input}
+						leftSide={<Icon name="ios-key" size={20} color="#222222" style={styles.pin} />}
+						placeholder="Tanggal Lahir"
 						/>
 					<LineYellowButton style={styles.button} onPress={() => {console.log('klik')}} text={'Selanjutnya'} />
 				</View>
@@ -122,6 +125,9 @@ const styles = StyleSheet.create({
 		borderRadius: 56,
 		height: 112,
 		width: 112,
+	},
+	input: {
+		marginTop: 25,
 	},
 	button: {
 		marginVertical: 40,

@@ -45,7 +45,7 @@ export default class Splash extends Component<{}> {
 					}
 					onPress = {
 						() => {
-							this.pickSingleBase64(true)
+							console.log('klik')
 						}
 					}
 					text = {
