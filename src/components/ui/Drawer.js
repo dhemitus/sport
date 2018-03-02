@@ -18,11 +18,13 @@ export default class Drawer extends Component {
 		super(props)
 		this.myField = this.myField.bind(this)
 		this.myDetField = this.myDetField.bind(this)
+		this.myOthField = this.myOthField.bind(this)
 		this.mySectField = this.mySecField.bind(this)
 		this.splash = this.splash.bind(this)
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
 		this.about = this.about.bind(this)
+		this.edit = this.edit.bind(this)
 		this.profile = this.profile.bind(this)
 		this.contact = this.contact.bind(this)
 	}
@@ -39,6 +41,13 @@ export default class Drawer extends Component {
 		this.toggleDrawer()
 		this.props.navigator.popToRoot({
 			screen: 'weresport.Front'
+		})
+	}
+
+	myOthField = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.MyField'
 		})
 	}
 
@@ -89,6 +98,13 @@ export default class Drawer extends Component {
 		})
 	}
 
+	edit = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.Edit'
+		})
+	}
+
 	contact = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -111,6 +127,11 @@ export default class Drawer extends Component {
 				</View>
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
+						Detail Lapangan
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.myOthField()}>
 						Detail Lapanganku
 					</Text>
 				</View>
@@ -142,6 +163,11 @@ export default class Drawer extends Component {
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.profile()}>
 						Profile
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.edit()}>
+						Edit Profile
 					</Text>
 				</View>
 				<View style={styles.drawerListItem}>

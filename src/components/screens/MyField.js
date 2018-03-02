@@ -14,6 +14,7 @@ import StarRating from 'react-native-star-rating'
 
 import mapstyle from '../../libs/constants/mapstyle'
 import LineWhiteTextInput from '../ui/LineWhiteTextInput'
+import CircleYellowButton from '../ui/CircleYellowButton'
 
 let {
 	width,
@@ -25,7 +26,7 @@ const LONGITUDE = 0
 const LATITUDE_DELTA = 0.0922
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO
 
-export default class DetailField extends Component<{}> {
+export default class MyField extends Component<{}> {
 
 	constructor() {
 		super()
@@ -41,7 +42,7 @@ export default class DetailField extends Component<{}> {
 	}
 	componentDidMount() {
 		console.log('run')
-		this.props.navigator.setTitle({ title: 'DETAIL LAPANGAN' })
+		this.props.navigator.setTitle({ title: 'DETAIL LAPANGANKU' })
 
 		navigator.geolocation.getCurrentPosition(
 			(position) => {
@@ -71,14 +72,7 @@ export default class DetailField extends Component<{}> {
 			starCount: rating
 		})
 	}
-/** 
- 				<MapView
-					provider={PROVIDER_GOOGLE}
-					style={styles.map}
-					region={this.state.region} >
-				</MapView>
 
-*/
 	render() {
 		return (
 			<View style={styles.container}>
@@ -106,12 +100,17 @@ export default class DetailField extends Component<{}> {
 				<View style={styles.foot}>
 					<Text style={styles.title}>12 Km</Text>
 				</View>
+				<View style={styles.buttoncontainer}>
+					<CircleYellowButton style={styles.button} onPress={() => { console.log('klik') }}>
+						<Icon name="ios-map" size={32} color="#222222" />
+					</CircleYellowButton>
+				</View>
 			</View>
-		);
+		)
 	}
 }
 
-DetailField.navigatorStyle = {
+MyField.navigatorStyle = {
 	statusBarColor: '#222222',
 	statusBarTextColorScheme: 'light',
 	navigationBarColor: 'black',
@@ -157,5 +156,16 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start',
 		marginBottom: 10,
 		marginLeft: 20,
+	},
+	buttoncontainer: {
+		...StyleSheet.absoluteFillObject,
+		justifyContent: 'flex-end',
+		alignItems: 'flex-end',
+		marginBottom: 28,
+		marginRight: 28,
+	},
+	button: {
+		justifyContent: 'center',
+		alignItems: 'center',
 	}
 });

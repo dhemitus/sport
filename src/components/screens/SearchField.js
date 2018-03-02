@@ -81,7 +81,6 @@ export default class SearchField extends Component<{}> {
 						style={styles.location}
 						placeholder="Cari lapangan"
 					/>
-
 				</View>
 				<MapView
 					provider={PROVIDER_GOOGLE}

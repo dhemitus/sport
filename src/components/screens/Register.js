@@ -14,7 +14,7 @@ import LineYellowTextInput from '../ui/LineYellowTextInput'
 import BlockYellowButton from '../ui/BlockYellowButton'
 import TextButton from '../ui/TextButton'
 
-export default class Splash extends Component<{}> {
+export default class Register extends Component<{}> {
 /** 
  * 				<View style={styles.input}>
 					<TextInput
@@ -76,7 +76,7 @@ export default class Splash extends Component<{}> {
 	}
 }
 
-Splash.navigatorStyle = {
+Register.navigatorStyle = {
 	statusBarColor: '#222222',
 	statusBarTextColorScheme: 'light',
 	navigationBarColor: 'black',
