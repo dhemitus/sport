@@ -12,7 +12,6 @@ import {
 } from 'react-native'
 import LineYellowButton from '../ui/LineYellowButton'
 import UnderlineYellowTextInput from '../ui/UnderlineYellowTextInput'
-import LineYellowTextInput from '../ui/LineYellowTextInput'
 import Icon from 'react-native-vector-icons/Ionicons'
 import TextButton from '../ui/TextButton'
 const ImagePicker = NativeModules.ImageCropPicker

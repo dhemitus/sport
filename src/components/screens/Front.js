@@ -74,12 +74,11 @@ export default class Front extends Component<{}> {
 		return (
 			<View style={styles.container}>
 				<View style={styles.search}>
-					<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />
 					<LineWhiteTextInput
+						leftSide={<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />}
 						style={styles.location}
 						placeholder="Cari lapangan"
 					/>
-
 				</View>
 				<MapView
 					provider={PROVIDER_GOOGLE}
@@ -129,11 +128,10 @@ const styles = StyleSheet.create({
 	},
 	search: {
 		padding: 20,
-		flexDirection: 'row',
-		marginVertical: 32,
+		marginVertical: 28,
 	},
 	location: {
-		marginRight: 20,
+		marginRight: 5,
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,

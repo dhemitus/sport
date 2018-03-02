@@ -76,8 +76,8 @@ export default class SearchField extends Component<{}> {
 		return (
 			<View style={styles.container}>
 				<View style={styles.search}>
-					<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />
 					<LineWhiteTextInput
+						leftSide={<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />}
 						style={styles.location}
 						placeholder="Cari lapangan"
 					/>
@@ -129,12 +129,11 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 	},
 	pin: {
-		marginTop: 20,
+		marginTop: 10,
 		marginRight: 10
 	},
 	search: {
 		paddingLeft: 20,
-		flexDirection: 'row',
 	},
 	location: {
 		marginRight: 20,

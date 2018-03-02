@@ -84,15 +84,15 @@ export default class DetailField extends Component<{}> {
 			<View style={styles.container}>
 				<View style={styles.searchcontainer}>
 					<View style={styles.search}>
-						<Icon name="ios-locate" size={10} color="#FFFFFF" style={styles.pin} />
 						<LineWhiteTextInput
+							leftSide={<Icon name="ios-locate" size={10} color="#FFFFFF" style={styles.pin} />}
 							style={styles.location}
 							placeholder="Mulai"
 						/>
 					</View>
 					<View style={styles.search}>
-						<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />
 						<LineWhiteTextInput
+							leftSide={<Icon name="ios-pin" size={20} color="#FFFFFF" style={styles.pin} />}
 							style={styles.location}
 							placeholder="Finish"
 						/>
@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
 	},
 	search: {
 		paddingLeft: 20,
-		flexDirection: 'row',
 	},
 	location: {
 		marginRight: 20,
