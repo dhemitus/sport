@@ -4,6 +4,7 @@ import { Navigation } from 'react-native-navigation'
 
 import Front from './Front'
 import Edit from './Edit'
+import EditGroup from './EditGroup'
 import DetailField from './DetailField'
 import SearchField from './SearchField'
 import MyField from './MyField'
@@ -26,6 +27,7 @@ export function registerScreens(store, Provider) {
 	Navigation.registerComponent('weresport.Splash', () => Splash, store, Provider)
 	Navigation.registerComponent('weresport.About', () => About, store, Provider)
 	Navigation.registerComponent('weresport.Edit', () => Edit, store, Provider)
+	Navigation.registerComponent('weresport.EditGroup', () => EditGroup, store, Provider)
 	Navigation.registerComponent('weresport.Profile', () => Profile, store, Provider)
 	Navigation.registerComponent('weresport.Contact', () => Contact, store, Provider)
 }

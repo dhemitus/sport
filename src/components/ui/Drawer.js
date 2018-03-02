@@ -25,6 +25,7 @@ export default class Drawer extends Component {
 		this.register = this.register.bind(this)
 		this.about = this.about.bind(this)
 		this.edit = this.edit.bind(this)
+		this.editGrp = this.editGrp.bind(this)
 		this.profile = this.profile.bind(this)
 		this.contact = this.contact.bind(this)
 	}
@@ -105,6 +106,13 @@ export default class Drawer extends Component {
 		})
 	}
 
+	editGrp = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.EditGroup'
+		})
+	}
+
 	contact = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -168,6 +176,11 @@ export default class Drawer extends Component {
 				<View style={styles.drawerListItem}>
 					<Text style={styles.drawerListItemText} onPress={() => this.edit()}>
 						Edit Profile
+					</Text>
+				</View>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.drawerListItemText} onPress={() => this.editGrp()}>
+						Edit Group
 					</Text>
 				</View>
 				<View style={styles.drawerListItem}>
