@@ -12,17 +12,17 @@ import {
 export default class LineYellowButton extends Component<{}> {
 	render() {
 		let { leftSide, rightSide, style, text, onPress } = this.props
+		let buttonstyle = styles.button;
+		buttonstyle = StyleSheet.flatten([buttonstyle, style]);
 		return (
-			<View style={style}>
-				<TouchableOpacity
-					style={styles.button}
-					onPress={() => onPress()}
-				>
-					{leftSide}
-					<Text style={styles.buttontext}>{text}</Text>
-					{rightSide}
-				</TouchableOpacity>
-			</View>
+			<TouchableOpacity
+				style={buttonstyle}
+				onPress={() => onPress()}
+			>
+				{leftSide}
+				<Text style={styles.buttontext}>{text}</Text>
+				{rightSide}
+			</TouchableOpacity>
 		)
 	}
 }

@@ -5,8 +5,12 @@ import { Navigation } from 'react-native-navigation'
 import Front from './Front'
 import Edit from './Edit'
 import EditGroup from './EditGroup'
+import SearchGroup from './SearchGroup'
+import InviteGroup from './InviteGroup'
 import DetailField from './DetailField'
 import SearchField from './SearchField'
+import FullGroup from './FullGroup'
+import ClosedGroup from './ClosedGroup'
 import MyField from './MyField'
 import About from './About'
 import Login from './Login'
@@ -28,6 +32,10 @@ export function registerScreens(store, Provider) {
 	Navigation.registerComponent('weresport.About', () => About, store, Provider)
 	Navigation.registerComponent('weresport.Edit', () => Edit, store, Provider)
 	Navigation.registerComponent('weresport.EditGroup', () => EditGroup, store, Provider)
+	Navigation.registerComponent('weresport.SearchGroup', () => SearchGroup, store, Provider)
+	Navigation.registerComponent('weresport.InviteGroup', () => InviteGroup, store, Provider)
+	Navigation.registerComponent('weresport.FullGroup', () => FullGroup, store, Provider)
+	Navigation.registerComponent('weresport.ClosedGroup', () => ClosedGroup, store, Provider)
 	Navigation.registerComponent('weresport.Profile', () => Profile, store, Provider)
 	Navigation.registerComponent('weresport.Contact', () => Contact, store, Provider)
 }

@@ -3,44 +3,48 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
-    StyleSheet,
-    Text,
-    View,
-    TouchableOpacity,
+	StyleSheet,
+	Text,
+	View,
+	TouchableOpacity,
 } from 'react-native'
 
+import WButton from './WButton'
+
 export default class TextButton extends Component<{}> {
-    render() {
-        let { leftSide, rightSide, style, text, onPress } = this.props
-        return (
-            <TouchableOpacity
-                style={styles.inputstyle}
-                onPress={() => onPress()}
-            >
-                {leftSide}
-                <Text style={style}>{text}</Text>
-                {rightSide}
-            </TouchableOpacity>
-        )
-    }
+	render() {
+		let { leftSide, rightSide, text, style, textStyle } = this.props
+
+		let buttonstyle = styles.button;
+		buttonstyle = StyleSheet.flatten([buttonstyle, style]);
+
+		return (
+			<WButton props={this.props} style={buttonstyle}>
+				{leftSide}
+				<Text style={textStyle}>{text}</Text>
+				{rightSide}
+			</WButton>
+		)
+	}
 }
 
 TextButton.propTypes = {
-    leftSide: PropTypes.any,
-    rightSide: PropTypes.any,
-    text: PropTypes.string.isRequired,
-    onPress: PropTypes.func.isRequired
+	leftSide: PropTypes.any,
+	rightSide: PropTypes.any,
+	textStyle: PropTypes.object,
+	text: PropTypes.string.isRequired,
+	onPress: PropTypes.func.isRequired,
 }
 
 TextButton.defaultProps = {
-    leftSide: <View style={{ flex: 1 }} />,
-    rightSide: <View style={{ flex: 1 }} />,
-    text: '',
-    onPress: () => { },
+	leftSide: <View style={{ flex: 1 }} />,
+	rightSide: <View style={{ flex: 1 }} />,
+	text: '',
+	onPress: () => { },
 }
 
 const styles = StyleSheet.create({
-    inputstyle: {
-        flexDirection: 'row',
-    }
+	button: {
+		flexDirection: 'row',
+	}
 })

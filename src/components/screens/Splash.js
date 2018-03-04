@@ -40,17 +40,17 @@ export default class Splash extends Component<{}> {
 					/>
 				</View>
 				<View style={styles.formcontainer}>
-					< LineYellowButton style = {
+					< LineYellowButton style={
 						styles.button
 					}
-					onPress = {
-						() => {
-							console.log('klik')
+						onPress={
+							() => {
+								console.log('klik')
+							}
 						}
-					}
-					text = {
-						'Mulai'
-					}
+						text={
+							'Mulai'
+						}
 					/>
 					<View style={styles.language}>
 						<TextButton leftSide={
@@ -64,7 +64,7 @@ export default class Splash extends Component<{}> {
 								source={require('../../assets/images/indonesia.png')}
 							/>
 
-						} style={styles.yellowtextbold} text={'Bahasa Indonesia'} />
+						} textStyle={styles.yellowtextbold} text={'Bahasa Indonesia'} />
 						<TextButton leftSide={
 							<Image
 								style={{
@@ -75,8 +75,8 @@ export default class Splash extends Component<{}> {
 								}}
 								source={require('../../assets/images/english.png')}
 							/>
-							
-						} style={styles.whitetext} text={'English'} />
+
+						} textStyle={styles.whitetext} text={'English'} />
 					</View>
 				</View>
 			</View>

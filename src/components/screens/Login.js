@@ -9,7 +9,7 @@ import {
 	View,
 	TouchableOpacity,
 } from 'react-native'
-import BlockYellowButton from '../ui/BlockYellowButton'
+import BlockButton from '../ui/BlockButton'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
 import Icon from 'react-native-vector-icons/Ionicons'
 import TextButton from '../ui/TextButton'
@@ -54,11 +54,11 @@ export default class Login extends Component<{}> {
 							placeholder="Password"
 							secureTextEntry={true}
 						/>
-					<TextButton style={styles.subset} text={'Lupa password?'} />
-					<BlockYellowButton style={styles.button} onPress={() => {console.log('klik')}} text={'LOGIN'} />
+					<TextButton textStyle={styles.subset} text={'Lupa password?'} />
+					<BlockButton style={styles.button} onPress={() => {console.log('klik')}} text={'LOGIN'} />
 					<View style={styles.memberside}>
 						<Text style={styles.yellowtext}>Belum memiliki akun? </Text>
-						<TextButton style={styles.yellowtextbold} text={'DAFTAR'} />
+						<TextButton textStyle={styles.yellowtextbold} text={'DAFTAR'} onPress={() => { console.log('klutik') }} />
 					</View>
 				</View>
 			</View>

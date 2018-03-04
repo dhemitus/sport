@@ -11,22 +11,11 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
-import BlockYellowButton from '../ui/BlockYellowButton'
+import BlockButton from '../ui/BlockButton'
 import TextButton from '../ui/TextButton'
 
 export default class Register extends Component<{}> {
-/** 
- * 				<View style={styles.input}>
-					<TextInput
-						placeholderTextColor={'#777777'}
-						underlineColorAndroid={'transparent'}
-						style={styles.textinput}
-						placeholder="Alamat Email"
-						selectionColor={'#e4ff64'}
-					/>
-				</View>
 
-*/
 	render() {
 		return (
 			<View style={styles.container}>
@@ -65,10 +54,10 @@ export default class Register extends Component<{}> {
 						/>
 						<Text style={styles.subset}>(Jika ada)</Text>
 					</View>
-					<BlockYellowButton style={styles.button} onPress={() => { console.log('klik') }} text={'Daftar'} />
+					<BlockButton style={styles.button} onPress={() => { console.log('klik') }} text={'Daftar'} />
 					<View style={styles.memberside}>
 						<Text style={styles.yellowtext}>Sudah memiliki akun? </Text>
-						<TextButton style={styles.yellowtextbold} text={'MASUK'} />
+						<TextButton textStyle={styles.yellowtextbold} text={'MASUK'} />
 					</View>
 				</View>
 			</View>

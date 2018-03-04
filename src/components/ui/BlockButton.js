@@ -9,49 +9,53 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 
-export default class LineGreyButton extends Component<{}> {
+import WButton from './WButton'
+
+export default class BlockButton extends Component<{}> {
 	render() {
-		let { leftSide, rightSide, style, text, onPress } = this.props
+		let { leftSide, rightSide, text, style, textStyle } = this.props
+
 		let buttonstyle = styles.button;
 		buttonstyle = StyleSheet.flatten([buttonstyle, style]);
+		textStyle = StyleSheet.flatten([styles.buttontext, textStyle])
 		return (
-			<TouchableOpacity
-				style={buttonstyle}
-				onPress={() => onPress()}
-			>
+			<WButton props={this.props} style={buttonstyle}>
 				{leftSide}
-				<Text style={styles.buttontext}>{text}</Text>
+				<Text style={textStyle}>{text}</Text>
 				{rightSide}
-			</TouchableOpacity>
+			</WButton>
 		)
 	}
 }
-
-LineGreyButton.propTypes = {
-	leftSide: PropTypes.object,
-	rightSide: PropTypes.object,
+BlockButton.propTypes = {
+	leftSide: PropTypes.any,
+	rightSide: PropTypes.any,
+	textStyle: PropTypes.object,
+	style: PropTypes.object,
 	text: PropTypes.string.isRequired,
 	onPress: PropTypes.func.isRequired
 }
 
-LineGreyButton.defaultProps = {
+BlockButton.defaultProps = {
 	leftSide: <View style={{ flex: 1 }} />,
 	rightSide: <View style={{ flex: 1 }} />,
 	text: '',
 	onPress: () => { },
+	textStyle: {},
+	style: {},
 }
 
 const styles = StyleSheet.create({
 	button: {
-		backgroundColor: '#222222',
+		backgroundColor: '#e4ff64',
 		padding: 10,
 		alignItems: 'center',
-		borderColor: '#777777',
+		borderColor: '#e4ff64',
 		borderWidth: 1,
 		borderRadius: 10,
 	},
 	buttontext: {
 		fontWeight: 'bold',
-		color: '#e4ff64'
+		color: '#222222'
 	},
 })
