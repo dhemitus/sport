@@ -9,36 +9,40 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 
-export default class LineYellowButton extends Component<{}> {
+import WButton from './WButton'
+
+export default class OutlineButton extends Component<{}> {
 	render() {
-		let { leftSide, rightSide, style, text, onPress } = this.props
+		let { leftSide, rightSide, children, text, style, textStyle, onPress } = this.props
+
 		let buttonstyle = styles.button;
 		buttonstyle = StyleSheet.flatten([buttonstyle, style]);
+		textStyle = StyleSheet.flatten([styles.buttontext, textStyle])
 		return (
-			<TouchableOpacity
-				style={buttonstyle}
-				onPress={() => onPress()}
-			>
+			<WButton props={this.props} style={buttonstyle} onPress={onPress}>
 				{leftSide}
-				<Text style={styles.buttontext}>{text}</Text>
+				{text !== null ? <Text style={textStyle}>{text}</Text> : children }
 				{rightSide}
-			</TouchableOpacity>
+			</WButton>
 		)
 	}
 }
-
-LineYellowButton.propTypes = {
-	leftSide: PropTypes.object,
-	rightSide: PropTypes.object,
+OutlineButton.propTypes = {
+	leftSide: PropTypes.any,
+	rightSide: PropTypes.any,
+	textStyle: PropTypes.style,
+	style: PropTypes.style,
 	text: PropTypes.string.isRequired,
 	onPress: PropTypes.func.isRequired
 }
 
-LineYellowButton.defaultProps = {
+OutlineButton.defaultProps = {
 	leftSide: <View style={{ flex: 1 }} />,
 	rightSide: <View style={{ flex: 1 }} />,
 	text: '',
 	onPress: () => { },
+	textStyle: StyleSheet.create({}),
+	style: StyleSheet.create({}),
 }
 
 const styles = StyleSheet.create({
@@ -52,6 +56,6 @@ const styles = StyleSheet.create({
 	},
 	buttontext: {
 		fontWeight: 'bold',
-		color: '#e4ff64'
+		color: '#e4ff64',
 	},
 })

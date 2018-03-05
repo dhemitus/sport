@@ -9,7 +9,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons'
 import LineWhiteTextInput from '../ui/LineWhiteTextInput'
 import UnderlineYellowTextInput from '../ui/UnderlineYellowTextInput'
-import LineYellowButton from '../ui/LineYellowButton'
+import OutlineButton from '../ui/button/OutlineButton'
 
 export default class About extends Component<{}> {
 
@@ -59,7 +59,7 @@ export default class About extends Component<{}> {
 						/>
 					</View>
 					<View style={styles.buttonform}>
-						<LineYellowButton style={styles.button} onPress={() => { console.log('klik') }} text={'Kirim'} />
+						<OutlineButton style={styles.button} onPress={() => { console.log('klik') }} text={'Kirim'} />
 					</View>
 				</View>
 			</View>

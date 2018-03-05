@@ -13,7 +13,7 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineGreyTextInput from '../ui/LineGreyTextInput'
-import BlockRoundButton from '../ui/BlockRoundButton'
+import BlockRoundButton from '../ui/button/BlockRoundButton'
 import Icon from 'react-native-vector-icons/Ionicons'
 const ImagePicker = NativeModules.ImageCropPicker
 
@@ -107,7 +107,7 @@ export default class FullGroup extends Component<{}> {
 							}
 							style={styles.button} 
 							textStyle={{color:'white'}} 
-							onPress={() => { console.log('klik') }} 
+							onPress={() =>{console.log('klik full')}} 
 							text={'PERMINTAAN BERGABUNG'} 
 						/>
 					</View>

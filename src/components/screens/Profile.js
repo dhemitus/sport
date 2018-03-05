@@ -10,11 +10,12 @@ import {
 	NativeModules,
 	TouchableOpacity,
 } from 'react-native'
-import LineYellowButton from '../ui/LineYellowButton'
+import OutlineButton from '../ui/button/OutlineButton'
 import UnderlineYellowTextInput from '../ui/UnderlineYellowTextInput'
 import Icon from 'react-native-vector-icons/Ionicons'
-import TextButton from '../ui/TextButton'
+import TextButton from '../ui/button/TextButton'
 const ImagePicker = NativeModules.ImageCropPicker
+import CircleButton from '../ui/button/CircleButton'
 
 export default class Profile extends Component<{}> {
 	state = {
@@ -22,6 +23,7 @@ export default class Profile extends Component<{}> {
 		images: null,
 		image: null
 	}
+
 	pickSingleBase64 = () => {
 		ImagePicker.openPicker({
 			width: 300,
@@ -48,27 +50,22 @@ export default class Profile extends Component<{}> {
 		return (
 			<View style={styles.container}>
 				<View style={styles.imagecontainer}>
-					<TouchableOpacity style={styles.bigtouch}
-						onPress={
-							() => {
-								this.pickSingleBase64()
-							}
+					<CircleButton style={styles.bigtouch} onPress={() => { this.pickSingleBase64() }}>
+						{
+							this.state.image === null ? 
+								<Icon name="ios-person" size={80} color="#222222" />
+							:
+								<Image
+									style={{
+										height: 102,
+										width: 102,
+										borderRadius: 51,
+										resizeMode: Image.resizeMode.cover,
+									}}
+									source={this.state.image}
+								/>
 						}
-					>
-					{this.state.image === null ?
-							<Icon name="ios-person" size={80} color="#222222" />
-						:
-							<Image
-								style={{
-									height:102,
-									width:102,
-									borderRadius: 51,
-									resizeMode: Image.resizeMode.cover,
-								}}
-								source={this.state.image}
-							/>
-					}
-					</TouchableOpacity>
+					</CircleButton>
 				</View>
 				<View style={styles.formcontainer}>
 					<UnderlineYellowTextInput
@@ -81,7 +78,7 @@ export default class Profile extends Component<{}> {
 						leftSide={<Icon name="ios-key" size={20} color="#222222" style={styles.pin} />}
 						placeholder="Tanggal Lahir"
 						/>
-					<LineYellowButton style={styles.button} onPress={() => {console.log('klik')}} text={'Selanjutnya'} />
+					<OutlineButton style={styles.button} onPress={() => {console.log('klik')}} text={'Selanjutnya'} />
 				</View>
 			</View>
 		)

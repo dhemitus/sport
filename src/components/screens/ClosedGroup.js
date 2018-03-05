@@ -13,7 +13,7 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineGreyTextInput from '../ui/LineGreyTextInput'
-import BlockRoundButton from '../ui/BlockRoundButton'
+import BlockRoundButton from '../ui/button/BlockRoundButton'
 import Icon from 'react-native-vector-icons/Ionicons'
 const ImagePicker = NativeModules.ImageCropPicker
 
@@ -77,7 +77,6 @@ export default class ClosedGroup extends Component<{}> {
 				</View>
 				<View style={styles.formcontainer}>
 					<ScrollView horizontal>
-
 						<View style={styles.member}>
 							<View style={styles.smalltouch}>
 								<Image

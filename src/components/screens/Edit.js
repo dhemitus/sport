@@ -13,9 +13,10 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineGreyTextInput from '../ui/LineGreyTextInput'
-import BlockRoundButton from '../ui/BlockRoundButton'
+import BlockRoundButton from '../ui/button/BlockRoundButton'
 import Icon from 'react-native-vector-icons/Ionicons'
 const ImagePicker = NativeModules.ImageCropPicker
+import CircleButton from '../ui/button/CircleButton'
 
 export default class Edit extends Component<{}> {
 	state = {
@@ -81,27 +82,22 @@ export default class Edit extends Component<{}> {
 						</TouchableOpacity>
 					</View>
 					<View style={styles.imagecontainer}>
-						<TouchableOpacity style={styles.bigtouch}
-							onPress={
-								() => {
-									this.pickSingleBase64()
-								}
+						<CircleButton style={styles.bigtouch} onPress={() => { this.pickSingleBase64() }}>
+							{
+								this.state.image === null ?
+									<Icon name="ios-person" size={80} color="#222222" />
+									:
+									<Image
+										style={{
+											height: 110,
+											width: 110,
+											borderRadius: 55,
+											resizeMode: Image.resizeMode.cover,
+										}}
+										source={this.state.image}
+									/>
 							}
-						>
-							{this.state.image === null ?
-								<Icon name="ios-person" size={80} color="#222222" />
-								:
-								<Image
-									style={{
-										height: 110,
-										width: 110,
-										borderRadius: 55,
-										resizeMode: Image.resizeMode.cover,
-									}}
-									source={this.state.image}
-								/>
-							}
-						</TouchableOpacity>
+						</CircleButton>
 					</View>
 					<View style={styles.formcontainer}>
 						<LineGreyTextInput

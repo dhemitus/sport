@@ -14,7 +14,7 @@ import StarRating from 'react-native-star-rating'
 
 import mapstyle from '../../libs/constants/mapstyle'
 import LineWhiteTextInput from '../ui/LineWhiteTextInput'
-import BlockRoundButton from '../ui/BlockRoundButton'
+import BlockRoundButton from '../ui/button/BlockRoundButton'
 
 let {
 	width,

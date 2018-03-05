@@ -9,10 +9,10 @@ import {
 	View,
 	TouchableOpacity,
 } from 'react-native'
-import BlockButton from '../ui/BlockButton'
+import BlockButton from '../ui/button/BlockButton'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
 import Icon from 'react-native-vector-icons/Ionicons'
-import TextButton from '../ui/TextButton'
+import TextButton from '../ui/button/TextButton'
 
 export default class Login extends Component<{}> {
 

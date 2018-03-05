@@ -11,8 +11,8 @@ import {
 	TouchableOpacity,
 } from 'react-native'
 import LineYellowTextInput from '../ui/LineYellowTextInput'
-import BlockButton from '../ui/BlockButton'
-import TextButton from '../ui/TextButton'
+import BlockButton from '../ui/button/BlockButton'
+import TextButton from '../ui/button/TextButton'
 
 export default class Register extends Component<{}> {
 
@@ -57,7 +57,7 @@ export default class Register extends Component<{}> {
 					<BlockButton style={styles.button} onPress={() => { console.log('klik') }} text={'Daftar'} />
 					<View style={styles.memberside}>
 						<Text style={styles.yellowtext}>Sudah memiliki akun? </Text>
-						<TextButton textStyle={styles.yellowtextbold} text={'MASUK'} />
+						<TextButton textStyle={styles.yellowtextbold} text={'MASUK'} onPress={() => { console.log('klik') }} text={'Daftar'} />
 					</View>
 				</View>
 			</View>

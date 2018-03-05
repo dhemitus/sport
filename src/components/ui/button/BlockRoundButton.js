@@ -22,15 +22,15 @@ import WButton from './WButton'
 
 export default class BlockRoundButton extends Component<{}> {
 	render() {
-		let { leftSide, rightSide, text, style, textStyle } = this.props
+		let { leftSide, rightSide, children, text, style, textStyle, onPress } = this.props
 
 		let buttonstyle = styles.button;
 		buttonstyle = StyleSheet.flatten([buttonstyle, style]);
 		textStyle = StyleSheet.flatten([styles.buttontext, textStyle])
 		return (
-			<WButton props={this.props} style={buttonstyle}>
+			<WButton props={this.props} style={buttonstyle} onPress={onPress}>
 				{leftSide}
-				<Text style={textStyle}>{text}</Text>
+				{text !== null ? <Text style={textStyle}>{text}</Text> : children}
 				{rightSide}
 			</WButton>
 		)
@@ -39,8 +39,8 @@ export default class BlockRoundButton extends Component<{}> {
 BlockRoundButton.propTypes = {
 	leftSide: PropTypes.any,
 	rightSide: PropTypes.any,
-	textStyle: PropTypes.object,
-	style: PropTypes.object,
+	textStyle: PropTypes.style,
+	style: PropTypes.style,
 	text: PropTypes.string.isRequired,
 	onPress: PropTypes.func.isRequired
 }

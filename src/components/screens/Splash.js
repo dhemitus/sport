@@ -11,8 +11,8 @@ import {
 	PixelRatio,
 	
 } from 'react-native'
-import LineYellowButton from '../ui/LineYellowButton'
-import TextButton from '../ui/TextButton'
+import TextButton from '../ui/button/TextButton'
+import OutlineButton from '../ui/button/OutlineButton'
 
 export default class Splash extends Component<{}> {
 
@@ -40,12 +40,12 @@ export default class Splash extends Component<{}> {
 					/>
 				</View>
 				<View style={styles.formcontainer}>
-					< LineYellowButton style={
+					< OutlineButton style={
 						styles.button
 					}
 						onPress={
 							() => {
-								console.log('klik')
+								console.log('klik splash')
 							}
 						}
 						text={
@@ -74,6 +74,12 @@ export default class Splash extends Component<{}> {
 									marginRight: 10
 								}}
 								source={require('../../assets/images/english.png')}
+								onPress={
+									() => {
+										console.log('klik splash indonesia')
+									}
+								}
+
 							/>
 
 						} textStyle={styles.whitetext} text={'English'} />

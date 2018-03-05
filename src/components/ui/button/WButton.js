@@ -18,7 +18,7 @@ export default class WButton extends Component<{}> {
         return (
             <TouchableOpacity
                 style={buttonstyle}
-                onPress={() => onPress()}
+                onPress={onPress}
             >
                 {children}
             </TouchableOpacity>
@@ -36,10 +36,11 @@ WButton.propTypes = {
 WButton.defaultProps = {
 //    leftSide: <View style={{ flex: 1 }} />,
 //    rightSide: <View style={{ flex: 1 }} />,
-    onPress: () => { },
+    onPress: () => { console.log('default click') },
 }
 
 const styles = StyleSheet.create({
     button: {
+        margin: 0,
     }
 })

@@ -14,7 +14,7 @@ import StarRating from 'react-native-star-rating'
 
 import mapstyle from '../../libs/constants/mapstyle'
 import LineWhiteTextInput from '../ui/LineWhiteTextInput'
-import CircleYellowButton from '../ui/CircleYellowButton'
+import CircleButton from '../ui/button/CircleButton'
 
 let {
 	width,
@@ -101,9 +101,9 @@ export default class MyField extends Component<{}> {
 					<Text style={styles.title}>12 Km</Text>
 				</View>
 				<View style={styles.buttoncontainer}>
-					<CircleYellowButton style={styles.button} onPress={() => { console.log('klik') }}>
+					<CircleButton style={styles.button} onPress={() => { console.log('klik') }}>
 						<Icon name="ios-map" size={32} color="#222222" />
-					</CircleYellowButton>
+					</CircleButton>
 				</View>
 			</View>
 		)
