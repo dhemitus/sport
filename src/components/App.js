@@ -31,7 +31,7 @@ const navigatorStyle = {
 	drawUnderTabBar: true
 }
 
-export default class App /*extends Component */ {
+export default class App {
 
 	constructor() {
 		Navigation.startSingleScreenApp({
@@ -53,3 +53,11 @@ export default class App /*extends Component */ {
 		})	
 	}
 }
+/*
+			drawer: {
+				left: {
+					screen: 'weresport.Drawer'
+				}
+			}
+
+*/

@@ -12,19 +12,22 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 
-//import Icon from 'react-native-vector-icons/Ionicons'
-
 export default class Drawer extends Component {
+
 	constructor(props) {
 		super(props)
 		this.myField = this.myField.bind(this)
 		this.myDetField = this.myDetField.bind(this)
 		this.myOthField = this.myOthField.bind(this)
 		this.mySectField = this.mySecField.bind(this)
+		this.fieldList = this.fieldList.bind(this)
+		this.detFieldList = this.detFieldList.bind(this)
+		this.secFieldList = this.secFieldList.bind(this)
 		this.splash = this.splash.bind(this)
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
 		this.about = this.about.bind(this)
+		this.home = this.home.bind(this)
 		this.edit = this.edit.bind(this)
 		this.editGrp = this.editGrp.bind(this)
 		this.searchGrp = this.searchGrp.bind(this)
@@ -33,6 +36,9 @@ export default class Drawer extends Component {
 		this.closedGrp = this.closedGrp.bind(this)
 		this.profile = this.profile.bind(this)
 		this.contact = this.contact.bind(this)
+		this.chat = this.chat.bind(this)
+		this.grpChat = this.grpChat.bind(this)
+		this.setting = this.setting.bind(this)
 	}
 
 	toggleDrawer() {
@@ -70,6 +76,27 @@ export default class Drawer extends Component {
 			screen: 'weresport.SearchField'
 		})
 	}
+
+	fieldList = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.FieldList'
+		})
+	}
+
+	detFieldList = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.DetailFieldList'
+		})
+	}
+	secFieldList = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.SearchFieldList'
+		})
+	}
+
 	login = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -101,6 +128,13 @@ export default class Drawer extends Component {
 		this.toggleDrawer()
 		this.props.navigator.push({
 			screen: 'weresport.About'
+		})
+	}
+
+	home = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.Home'
 		})
 	}
 
@@ -153,7 +187,28 @@ export default class Drawer extends Component {
 		})
 	}
 
-	render() {
+	chat = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.Chat'
+		})
+	}
+
+	grpChat = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.GroupChat'
+		})
+	}
+
+	setting = () => {
+		this.toggleDrawer()
+		this.props.navigator.push({
+			screen: 'weresport.Setting'
+		})
+	}
+ 
+	render = () => {
 		return (
 			<View style={styles.container}>
 				<ScrollView>
@@ -183,6 +238,21 @@ export default class Drawer extends Component {
 						</Text>
 					</View>
 					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.fieldList()}>
+							Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.detFieldList()}>
+							Detail Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.secFieldList()}>
+							Cari Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
 						<Text style={styles.drawerListItemText} onPress={() => this.splash()}>
 							Splash
 						</Text>
@@ -195,6 +265,11 @@ export default class Drawer extends Component {
 					<View style={styles.drawerListItem}>
 						<Text style={styles.drawerListItemText} onPress={() => this.register()}>
 							Register
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.home()}>
+							Home
 						</Text>
 					</View>
 					<View style={styles.drawerListItem}>
@@ -242,12 +317,138 @@ export default class Drawer extends Component {
 							Contact
 						</Text>
 					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.chat()}>
+							Private Chat
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.grpChat()}>
+							Group Chat
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.setting()}>
+							Setting
+						</Text>
+					</View>
 				</ScrollView>
 			</View>
 		)
 	}
 }
-
+/**
+ 					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
+							Detail Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.myOthField()}>
+							Detail Lapanganku
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.mySecField()}>
+							Mencari Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.fieldList()}>
+							Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.detFieldList()}>
+							Detail Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.secFieldList()}>
+							Cari Daftar Lapangan
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.splash()}>
+							Splash
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.login()}>
+							Login
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.register()}>
+							Register
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.home()}>
+							Home
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.about()}>
+							About
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.profile()}>
+							Profile
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.edit()}>
+							Edit Profile
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.editGrp()}>
+							Edit Group
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.searchGrp()}>
+							Search Group
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.inviteGrp()}>
+							Invite Group
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.fullGrp()}>
+							Full Group
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.closedGrp()}>
+							Closed Group
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.contact()}>
+							Contact
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.chat()}>
+							Private Chat
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.grpChat()}>
+							Group Chat
+						</Text>
+					</View>
+					<View style={styles.drawerListItem}>
+						<Text style={styles.drawerListItemText} onPress={() => this.setting()}>
+							Setting
+						</Text>
+					</View>
+ */
 Drawer.propTypes = {
 	navigator: PropTypes.object
 }

@@ -24,10 +24,12 @@ export default class Edit extends Component<{}> {
 		images: null,
 		image: null
 	}
+
 	componentDidMount() {
 		console.log('run')
 		this.props.navigator.setTitle({ title: 'EDIT AKUN' })
 	}
+
 	pickSingleBase64 = () => {
 		ImagePicker.openPicker({
 			width: 300,
