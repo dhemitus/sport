@@ -49,15 +49,7 @@ export default class App {
 				left: {
 					screen: 'weresport.Drawer'
 				}
-			}
+			},
 		})	
 	}
 }
-/*
-			drawer: {
-				left: {
-					screen: 'weresport.Drawer'
-				}
-			}
-
-*/

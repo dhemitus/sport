@@ -27,7 +27,7 @@ export default class Drawer extends Component {
 		this.login = this.login.bind(this)
 		this.register = this.register.bind(this)
 		this.about = this.about.bind(this)
-		this.home = this.home.bind(this)
+//		this.home = this.home.bind(this)
 		this.edit = this.edit.bind(this)
 		this.editGrp = this.editGrp.bind(this)
 		this.searchGrp = this.searchGrp.bind(this)
@@ -90,6 +90,7 @@ export default class Drawer extends Component {
 			screen: 'weresport.DetailFieldList'
 		})
 	}
+
 	secFieldList = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -130,14 +131,14 @@ export default class Drawer extends Component {
 			screen: 'weresport.About'
 		})
 	}
-
+/*
 	home = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
 			screen: 'weresport.Home'
 		})
 	}
-
+*/
 	edit = () => {
 		this.toggleDrawer()
 		this.props.navigator.push({
@@ -265,11 +266,6 @@ export default class Drawer extends Component {
 					<View style={styles.drawerListItem}>
 						<Text style={styles.drawerListItemText} onPress={() => this.register()}>
 							Register
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.home()}>
-							Home
 						</Text>
 					</View>
 					<View style={styles.drawerListItem}>

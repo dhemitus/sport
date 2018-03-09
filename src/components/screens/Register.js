@@ -33,7 +33,7 @@ export default class Register extends Component<{}> {
 				<View style={styles.headcontainer}>
 					<Text style={styles.head}>DAFTAR</Text>
 				</View>
-				<View style={styles.formcontainer}>
+ 				<View style={styles.formcontainer}>
 					<LineYellowTextInput
 						placeholder="Alamat Email"
 					/>
@@ -57,7 +57,7 @@ export default class Register extends Component<{}> {
 					<BlockButton style={styles.button} onPress={() => { console.log('klik') }} text={'Daftar'} />
 					<View style={styles.memberside}>
 						<Text style={styles.yellowtext}>Sudah memiliki akun? </Text>
-						<TextButton textStyle={styles.yellowtextbold} text={'MASUK'} onPress={() => { console.log('klik') }} text={'Daftar'} />
+						<TextButton textStyle={styles.yellowtextbold} text={'MASUK'} onPress={() => { console.log('klutik') }} />
 					</View>
 				</View>
 			</View>

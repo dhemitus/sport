@@ -18,13 +18,17 @@ export default class SearchFieldList extends Component<{}> {
 	render() {
 		return (
 			<View style={styles.container}>
-				<SearchFieldListItem text={{name:'Lapangan Futsal Voli', address:'Pulo Harapan indah, RT 23 Cengkareng Bar, Cengkareng'}} />
-				<SearchFieldListItem text={{name:'Lapangan Futsal Cakra 12', address:'Jl. Cakrawala No 18, RT 13/RW 1 Kb. Pala Makasar Kota'}} />
+				<SearchFieldListItem text={{ name: 'Lapangan Futsal Voli', address: 'Pulo Harapan indah, RT 23 Cengkareng Bar, Cengkareng' }} />
+				<SearchFieldListItem text={{ name: 'Lapangan Futsal Cakra 12', address: 'Jl. Cakrawala No 18, RT 13/RW 1 Kb. Pala Makasar Kota' }} />
 			</View>
 		)
 	}
 }
+/**
+  				<SearchFieldListItem text={{name:'Lapangan Futsal Voli', address:'Pulo Harapan indah, RT 23 Cengkareng Bar, Cengkareng'}} />
+				<SearchFieldListItem text={{name:'Lapangan Futsal Cakra 12', address:'Jl. Cakrawala No 18, RT 13/RW 1 Kb. Pala Makasar Kota'}} />
 
+ */
 SearchFieldList.navigatorStyle = {
 	statusBarColor: '#222222',
 	statusBarTextColorScheme: 'light',

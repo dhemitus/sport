@@ -19,7 +19,7 @@ import Profile from './Profile'
 import Register from './Register'
 import Splash from './Splash'
 import Contact from './Contact'
-import Home from './Home'
+//import Home from './Home'
 import Chat from './Chat'
 import Setting from './Setting'
 import GroupChat from './GroupChat'
@@ -44,7 +44,7 @@ export function registerScreens(store, Provider) {
 	Navigation.registerComponent('weresport.FullGroup', () => FullGroup, store, Provider)
 	Navigation.registerComponent('weresport.ClosedGroup', () => ClosedGroup, store, Provider)
 	Navigation.registerComponent('weresport.Profile', () => Profile, store, Provider)
-	Navigation.registerComponent('weresport.Home', () => Home, store, Provider)
+//	Navigation.registerComponent('weresport.Home', () => Home, store, Provider)
 	Navigation.registerComponent('weresport.Chat', () => Chat, store, Provider)
 	Navigation.registerComponent('weresport.Setting', () => Setting, store, Provider)
 	Navigation.registerComponent('weresport.GroupChat', () => GroupChat, store, Provider)
