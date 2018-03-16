@@ -55,6 +55,12 @@
 		9A41C968B082472086043A29 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E89370CB27D74478A0B9D14A /* libRNImagePicker.a */; };
 		FF9EE5AD31174DB386DB128D /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D73ED7D93B4F488DA8ABA6 /* libimageCropPicker.a */; };
 		E1F10122743546F9A14AAFCD /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 934C7E1A690C4312B5D8789C /* libRNFS.a */; };
+		3D02A66F382340A2B7230EB0 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AEF85159DE47489197535D /* libBVLinearGradient.a */; };
+		29BF6E21DA14480B98D727E6 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 531C8E157E444B5985B1739D /* libRNGoogleSignin.a */; };
+		ED6AE30EAD9744D48B068918 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768DD8F7A3847ED9605FFE3 /* libz.tbd */; };
+		629C92EC835E48BC9496B18C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC25DB369C4418A9F464867 /* SafariServices.framework */; };
+		7EAC5639DA58485C9E0974B6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCBB290EFF3445AB6497C89 /* SystemConfiguration.framework */; };
+		0EFF262233DA44E287F69106 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF73B9AD42C54C8483F7ED79 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,6 +337,14 @@
 		58D73ED7D93B4F488DA8ABA6 /* libimageCropPicker.a */ = {isa = PBXFileReference; name = "libimageCropPicker.a"; path = "libimageCropPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		8F676595D2984508A3DE8FF0 /* RNFS.xcodeproj */ = {isa = PBXFileReference; name = "RNFS.xcodeproj"; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		934C7E1A690C4312B5D8789C /* libRNFS.a */ = {isa = PBXFileReference; name = "libRNFS.a"; path = "libRNFS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		51CE501D17D2455DB2ACEA71 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		26AEF85159DE47489197535D /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6C5E5AE633444C0EBF638E8C /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		531C8E157E444B5985B1739D /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0768DD8F7A3847ED9605FFE3 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		6AC25DB369C4418A9F464867 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1FCBB290EFF3445AB6497C89 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		FF73B9AD42C54C8483F7ED79 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +381,12 @@
 				9A41C968B082472086043A29 /* libRNImagePicker.a in Frameworks */,
 				FF9EE5AD31174DB386DB128D /* libimageCropPicker.a in Frameworks */,
 				E1F10122743546F9A14AAFCD /* libRNFS.a in Frameworks */,
+				3D02A66F382340A2B7230EB0 /* libBVLinearGradient.a in Frameworks */,
+				29BF6E21DA14480B98D727E6 /* libRNGoogleSignin.a in Frameworks */,
+				ED6AE30EAD9744D48B068918 /* libz.tbd in Frameworks */,
+				629C92EC835E48BC9496B18C /* SafariServices.framework in Frameworks */,
+				7EAC5639DA58485C9E0974B6 /* SystemConfiguration.framework in Frameworks */,
+				0EFF262233DA44E287F69106 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +527,10 @@
 			isa = PBXGroup;
 			children = (
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				0768DD8F7A3847ED9605FFE3 /* libz.tbd */,
+				6AC25DB369C4418A9F464867 /* SafariServices.framework */,
+				1FCBB290EFF3445AB6497C89 /* SystemConfiguration.framework */,
+				FF73B9AD42C54C8483F7ED79 /* AddressBook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -552,6 +576,8 @@
 				B52CE01B06674A7B869D8D73 /* RNImagePicker.xcodeproj */,
 				9DBF93FA2794401FA2F462A5 /* imageCropPicker.xcodeproj */,
 				8F676595D2984508A3DE8FF0 /* RNFS.xcodeproj */,
+				51CE501D17D2455DB2ACEA71 /* BVLinearGradient.xcodeproj */,
+				6C5E5AE633444C0EBF638E8C /* RNGoogleSignin.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1161,6 +1187,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1172,6 +1200,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1200,6 +1230,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1211,6 +1243,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1240,6 +1274,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1268,6 +1304,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1305,6 +1343,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1316,6 +1356,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Debug;
@@ -1353,6 +1395,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1364,6 +1408,8 @@
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-fs/**",
+					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 			};
 			name = Release;
@@ -1396,6 +1442,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1420,6 +1468,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

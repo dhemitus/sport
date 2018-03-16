@@ -6,12 +6,15 @@ import {
 	Text,
 	View, 
 	Dimensions,
+	ScrollView,
 } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
 import Icon from 'react-native-vector-icons/Ionicons'
-
+//import ScrollableTabView, {DefaultTabBar, } from 'react-native-scrollable-tab-view'
+//import TabNavigator from 'react-native-tab-navigator'
 import About from './About'
-import Front from './Front'
+import MyProfile from './MyProfile'
+import Setting from './Setting'
 
 const deviceW = Dimensions.get('window').width
 
@@ -25,7 +28,7 @@ const px2dp = (px) => {
 class Begin extends Component {
 
 	componentDidMount = () => {
-		console.log('run')
+		console.log(this.props)
 //		this.props.navigator.setTitle({ title: 'BEGIN' })
 	}
 
@@ -65,27 +68,53 @@ export default class Home extends Component {
 
 	render = () => {
 		return (
-			<TabNavigator style={styles.container}>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'home'}
-					title="Home"
-					selectedTitleStyle={{ color: "#3496f0" }}
-					renderIcon={() => <Icon name="ios-home" size={px2dp(22)} color="#666" />}
-					renderSelectedIcon={() => <Icon name="ios-home" size={px2dp(22)} color="#3496f0" />}
-					badgeText="1"
-					onPress={() => this.setState({ selectedTab: 'home' })}>
-					<Front />
-				</TabNavigator.Item>
-				<TabNavigator.Item
-					selected={this.state.selectedTab === 'profile'}
-					title="Profile"
-					selectedTitleStyle={{ color: "#3496f0" }}
-					renderIcon={() => <Icon name="ios-person" size={px2dp(22)} color="#666" />}
-					renderSelectedIcon={() => <Icon name="ios-person" size={px2dp(22)} color="#3496f0" />}
-					onPress={() => this.setState({ selectedTab: 'profile' })}>
-					<Profile />
-				</TabNavigator.Item>
-			</TabNavigator>
+		<TabNavigator style={styles.container}>
+			<TabNavigator.Item
+				selected={this.state.selectedTab === 'home'}
+				title="Home"
+				selectedTitleStyle={{color: "#222222"}}
+				renderIcon={() => <Icon name="ios-lock" size={px2dp(22)} color="#777777"/>}
+				renderSelectedIcon={() => <Icon name="ios-lock" size={px2dp(22)} color="#222222"/>}
+				onPress={() => this.setState({selectedTab: 'home'})}>
+				<About />
+			</TabNavigator.Item>
+			<TabNavigator.Item
+				selected={this.state.selectedTab === 'profile'}
+				title="Teman"
+				selectedTitleStyle={{color: "#222222"}}
+				renderIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#777777"/>}
+				renderSelectedIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#222222"/>}
+				onPress={() => this.setState({selectedTab: 'profile'})}>
+				<MyProfile />
+			</TabNavigator.Item>
+			<TabNavigator.Item
+				selected={this.state.selectedTab === 'schedule'}
+				title="Jadwal"
+				selectedTitleStyle={{color: "#222222"}}
+				renderIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#777777"/>}
+				renderSelectedIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#222222"/>}
+				onPress={() => this.setState({selectedTab: 'schedule'})}>
+				<MyProfile />
+			</TabNavigator.Item>
+			<TabNavigator.Item
+				selected={this.state.selectedTab === 'groups'}
+				title="Grupku"
+				selectedTitleStyle={{color: "#222222"}}
+				renderIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#777777"/>}
+				renderSelectedIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#222222"/>}
+				onPress={() => this.setState({selectedTab: 'groups'})}>
+				<MyProfile />
+			</TabNavigator.Item>
+			<TabNavigator.Item
+				selected={this.state.selectedTab === 'setting'}
+				title="Lainnya"
+				selectedTitleStyle={{color: "#222222"}}
+				renderIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#777777"/>}
+				renderSelectedIcon={() => <Icon name="ios-pin" size={px2dp(22)} color="#222222"/>}
+				onPress={() => this.setState({selectedTab: 'setting'})}>
+				<Setting />
+			</TabNavigator.Item>
+		</TabNavigator>
 		)
 	}
 }
@@ -105,16 +134,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
-	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-	instructions: {
-		textAlign: 'center',
-		color: '#333333',
-		marginBottom: 5,
+	    backgroundColor: 'black',
 	},
 })

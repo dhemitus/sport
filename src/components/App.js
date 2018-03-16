@@ -36,8 +36,8 @@ export default class App {
 	constructor() {
 		Navigation.startSingleScreenApp({
 			screen: {
-				screen: 'weresport.Front',
-				title: 'LAPANGANKU',
+				screen: 'weresport.Splash',
+				title: 'SPLASH',
 				navigatorStyle,
 				leftButtons: [
 					{

@@ -1,7 +1,13 @@
 package com.weresport;
 
+import android.content.Intent;
+import android.os.Bundle;
 //import com.facebook.react.ReactActivity;
 import com.reactnativenavigation.controllers.SplashActivity;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
@@ -13,6 +19,8 @@ import android.widget.ImageView;
 //import android.util.TypedValue;
 //public class MainActivity extends ReactActivity {
 public class MainActivity extends SplashActivity {
+
+    CallbackManager mCallbackManager;
 
     @Override
     public LinearLayout createSplashLayout() {
@@ -34,7 +42,7 @@ public class MainActivity extends SplashActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
+        MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
     }
 
     /**

@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import com.facebook.CallbackManager;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.react.ReactApplication;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
@@ -30,11 +32,11 @@ import com.wix.reactnativenotifications.RNNotificationsPackage;
 
 //public class MainApplication extends Application implements ReactApplication {
 public class MainApplication extends NavigationApplication {
-/*  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
 
   protected static CallbackManager getCallbackManager() {
     return mCallbackManager;
-  }*/
+  }
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -47,8 +49,10 @@ public class MainApplication extends NavigationApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNGoogleSigninPackage(),
+            new LinearGradientPackage(),
             new PickerPackage(),
-//          new FBSDKPackage(mCallbackManager),
+          new FBSDKPackage(mCallbackManager),
           new VectorIconsPackage(),
           new RNNotificationsPackage(MainApplication.this),
           new PickerPackage(),
@@ -65,6 +69,11 @@ public class MainApplication extends NavigationApplication {
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
+  }
+
+//  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+      mCallbackManager.onActivityResult(requestCode, resultCode, data);
   }
 
   @Override
@@ -91,7 +100,9 @@ public class MainApplication extends NavigationApplication {
       // No need to add RnnPackage and MainReactPackage
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-//        new FBSDKPackage(mCallbackManager),
+            new RNGoogleSigninPackage(),
+            new LinearGradientPackage(),
+            new FBSDKPackage(mCallbackManager),
         new VectorIconsPackage(),
 //        new RNNotificationsPackage(MainApplication.this),
       new PickerPackage(),

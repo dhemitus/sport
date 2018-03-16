@@ -22,9 +22,15 @@ export default class SettingListItem extends Component<{}> {
 		return (
 			<WButton props={this.props} style={buttonstyle} onPress={onPress}>
 				{text !== null ? <Text style={styles.buttontext}>{text}</Text> : children}
-				<View style={styles.pin}>
-					<Icon name="ios-arrow-forward-outline" size={20} color="#777777" />
-				</View>
+				{rightSide === null ?
+					<View style={styles.pin}>
+						<Icon name="ios-arrow-forward-outline" size={20} color="#777777" />
+					</View>
+				:
+					<View style={styles.pin}>
+						{rightSide}
+					</View>
+				}
 			</WButton>
 		)
 	}
@@ -39,7 +45,7 @@ SettingListItem.propTypes = {
 }
 
 SettingListItem.defaultProps = {
-	rightSide: <View style={{ flex: 1 }} />,
+	rightSide: null,
 	text: '',
 	onPress: () => { },
 	textStyle: StyleSheet.create({}),

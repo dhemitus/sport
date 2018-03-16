@@ -123,21 +123,21 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 	},
 	pin: {
-		marginVertical: 20,
+		marginVertical: 10,
 		marginRight: 10
 	},
 	search: {
-		padding: 20,
-		marginVertical: 28,
+		padding: 5,
+//		marginVertical: 28,
 	},
 	location: {
-		marginRight: 5,
+		marginRight: 10,
 	},
 	map: {
 		...StyleSheet.absoluteFillObject,
 		height: 420,
-//		marginVertical: 56,
-		marginVertical: 110,
+		marginVertical: 56,
+//		marginVertical: 110,
 	},
 	title: {
 		fontSize: 18,

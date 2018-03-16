@@ -7,38 +7,144 @@ import {
 	Text,
 	TouchableOpacity,
 	View,
-	ScrollView,
+	FlatList,
 	ToastAndroid
 } from 'react-native'
 import PropTypes from 'prop-types'
+
+const link = [
+	{
+		desc: 'Splash',
+		path: 'weresport.Splash',
+	},
+	{
+		desc: 'Login',
+		path: 'weresport.Login',
+	},
+	{
+		desc: 'Register',
+		path: 'weresport.Register',
+	},
+	{
+		desc: 'Profile',
+		path: 'weresport.Profile',
+	},
+	{
+		desc: 'Pilih Olahraga',
+		path: 'weresport.ChooseSport',
+	},
+	{
+		desc: 'Profile Ku',
+		path: 'weresport.MyProfile',
+	},
+	{
+		desc: 'Edit Profile',
+		path: 'weresport.Edit',
+	},
+	{
+		desc: 'About',
+		path: 'weresport.About',
+	},
+/*	{
+		desc: 'Home',
+		path: 'weresport.Home',
+	},*/
+	{
+		desc: 'Contact',
+		path: 'weresport.Contact',
+	},
+	{
+		desc: 'Setting',
+		path: 'weresport.Setting',
+	},
+	{
+		desc: 'System Setting',
+		path: 'weresport.OtherSetting',
+	},
+	{
+		desc: 'Language Setting',
+		path: 'weresport.LangSetting',
+	},
+	{
+		desc: 'Teman',
+		path: 'weresport.Friend',
+	},
+	{
+		desc: 'Undangan Teman',
+		path: 'weresport.InviteFriend',
+	},
+	{
+		desc: 'Private Chat',
+		path: 'weresport.Chat',
+	},
+	{
+		desc: 'Group Chat',
+		path: 'weresport.GroupChat',
+	},
+	{
+		desc: 'Lapanganku',
+		path: 'weresport.Front',
+	},
+	{
+		desc: 'Detail Lapangan',
+		path: 'weresport.DetailField',
+	},
+	{
+		desc: 'Detail Lapanganku',
+		path: 'weresport.MyField',
+	},
+	{
+		desc: 'Mencari Lapangan',
+		path: 'weresport.SearchField',
+	},
+	{
+		desc: 'Daftar Lapangan',
+		path: 'weresport.FieldList',
+	},
+	{
+		desc: 'Detail Daftar Lapangan',
+		path: 'weresport.DetailFieldList',
+	},
+	{
+		desc: 'Cari Daftar Lapangan',
+		path: 'weresport.SearchFieldList',
+	},
+	{
+		desc: 'Group Saya',
+		path: 'weresport.MyGroup',
+	},
+	{
+		desc: 'Buat Group',
+		path: 'weresport.CreateGroup',
+	},
+	{
+		desc: 'Edit Group',
+		path: 'weresport.EditGroup',
+	},
+	{
+		desc: 'Search Group',
+		path: 'weresport.SearchGroup',
+	},
+	{
+		desc: 'Invite Group',
+		path: 'weresport.InviteGroup',
+	},
+	{
+		desc: 'Full Group',
+		path: 'weresport.FullGroup',
+	},
+	{
+		desc: 'Closed Group',
+		path: 'weresport.ClosedGroup',
+	}
+]
 
 export default class Drawer extends Component {
 
 	constructor(props) {
 		super(props)
-		this.myField = this.myField.bind(this)
-		this.myDetField = this.myDetField.bind(this)
-		this.myOthField = this.myOthField.bind(this)
-		this.mySectField = this.mySecField.bind(this)
-		this.fieldList = this.fieldList.bind(this)
-		this.detFieldList = this.detFieldList.bind(this)
-		this.secFieldList = this.secFieldList.bind(this)
-		this.splash = this.splash.bind(this)
-		this.login = this.login.bind(this)
-		this.register = this.register.bind(this)
-		this.about = this.about.bind(this)
-//		this.home = this.home.bind(this)
-		this.edit = this.edit.bind(this)
-		this.editGrp = this.editGrp.bind(this)
-		this.searchGrp = this.searchGrp.bind(this)
-		this.inviteGrp = this.inviteGrp.bind(this)
-		this.fullGrp = this.fullGrp.bind(this)
-		this.closedGrp = this.closedGrp.bind(this)
-		this.profile = this.profile.bind(this)
-		this.contact = this.contact.bind(this)
-		this.chat = this.chat.bind(this)
-		this.grpChat = this.grpChat.bind(this)
-		this.setting = this.setting.bind(this)
+
+		this.onClick = this.onClick.bind(this)
 	}
 
 	toggleDrawer() {
@@ -48,403 +154,47 @@ export default class Drawer extends Component {
 			animated: true
 		})
 	}
-
-	myField = () => {
-		this.toggleDrawer()
-		this.props.navigator.popToRoot({
-			screen: 'weresport.Front'
-		})
-	}
-
-	myOthField = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.MyField'
-		})
-	}
-
-	myDetField = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.DetailField'
-		})
-	}
-
-	mySecField = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.SearchField'
-		})
-	}
-
-	fieldList = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.FieldList'
-		})
-	}
-
-	detFieldList = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.DetailFieldList'
-		})
-	}
-
-	secFieldList = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.SearchFieldList'
-		})
-	}
-
-	login = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Login'
-		})
-	}
-	profile = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Profile'
-		})
-	}
-
-	splash = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Splash'
-		})
-	}
-
-	register = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Register'
-		})
-	}
-
-	about = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.About'
-		})
-	}
-/*
-	home = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Home'
-		})
-	}
-*/
-	edit = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Edit'
-		})
-	}
-
-	editGrp = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.EditGroup'
-		})
-	}
-
-	searchGrp = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.SearchGroup'
-		})
-	}
-
-	inviteGrp = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.InviteGroup'
-		})
-	}
-
-	fullGrp = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.FullGroup'
-		})
-	}
-
-	closedGrp = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.ClosedGroup'
-		})
-	}
-
-	contact = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Contact'
-		})
-	}
-
-	chat = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Chat'
-		})
-	}
-
-	grpChat = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.GroupChat'
-		})
-	}
-
-	setting = () => {
-		this.toggleDrawer()
-		this.props.navigator.push({
-			screen: 'weresport.Setting'
-		})
-	}
  
+	listItem = (data) => {
+		let { path, desc } = data.item
+
+		return (
+			<View style={styles.drawerListItem}>
+				<Text style={styles.drawerListItemText} onPress={() => this.onClick(path)}>
+					{desc}
+				</Text>
+			</View>
+		)
+	}
+
+	onClick = (data) => {
+		this.toggleDrawer()
+
+		if( data === 'weresport.Splash' ) {
+			this.props.navigator.popToRoot({
+				screen: data
+			})
+		} else {
+			this.props.navigator.push({
+				screen: data
+			})
+		}
+	}
+
 	render = () => {
 		return (
 			<View style={styles.container}>
-				<ScrollView>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.head}>
-							Screen List
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.myField()}>
-							Lapanganku
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
-							Detail Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.myOthField()}>
-							Detail Lapanganku
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.mySecField()}>
-							Mencari Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.fieldList()}>
-							Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.detFieldList()}>
-							Detail Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.secFieldList()}>
-							Cari Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.splash()}>
-							Splash
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.login()}>
-							Login
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.register()}>
-							Register
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.about()}>
-							About
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.profile()}>
-							Profile
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.edit()}>
-							Edit Profile
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.editGrp()}>
-							Edit Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.searchGrp()}>
-							Search Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.inviteGrp()}>
-							Invite Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.fullGrp()}>
-							Full Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.closedGrp()}>
-							Closed Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.contact()}>
-							Contact
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.chat()}>
-							Private Chat
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.grpChat()}>
-							Group Chat
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.setting()}>
-							Setting
-						</Text>
-					</View>
-				</ScrollView>
+				<View style={styles.drawerListItem}>
+					<Text style={styles.head}>
+						Screen List
+					</Text>
+				</View>
+				<FlatList data={link} renderItem={this.listItem} />
 			</View>
 		)
 	}
 }
-/**
- 					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.myDetField()}>
-							Detail Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.myOthField()}>
-							Detail Lapanganku
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.mySecField()}>
-							Mencari Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.fieldList()}>
-							Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.detFieldList()}>
-							Detail Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.secFieldList()}>
-							Cari Daftar Lapangan
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.splash()}>
-							Splash
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.login()}>
-							Login
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.register()}>
-							Register
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.home()}>
-							Home
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.about()}>
-							About
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.profile()}>
-							Profile
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.edit()}>
-							Edit Profile
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.editGrp()}>
-							Edit Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.searchGrp()}>
-							Search Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.inviteGrp()}>
-							Invite Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.fullGrp()}>
-							Full Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.closedGrp()}>
-							Closed Group
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.contact()}>
-							Contact
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.chat()}>
-							Private Chat
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.grpChat()}>
-							Group Chat
-						</Text>
-					</View>
-					<View style={styles.drawerListItem}>
-						<Text style={styles.drawerListItemText} onPress={() => this.setting()}>
-							Setting
-						</Text>
-					</View>
- */
+
 Drawer.propTypes = {
 	navigator: PropTypes.object
 }

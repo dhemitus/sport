@@ -14,14 +14,15 @@ import {
 } from 'react-native'
 import LineGreyTextInput from '../ui/LineGreyTextInput'
 import BlockRoundButton from '../ui/button/BlockRoundButton'
+import CircleButton from '../ui/button/CircleButton'
 import Icon from 'react-native-vector-icons/Ionicons'
 const ImagePicker = NativeModules.ImageCropPicker
 
-export default class ClosedGroup extends Component<{}> {
+export default class MyGroup extends Component<{}> {
 
 	componentDidMount() {
 		console.log('run')
-		this.props.navigator.setTitle({ title: 'GABUNG GROUP' })
+		this.props.navigator.setTitle({ title: 'GROUP SAYA' })
 	}
 
 	render() {
@@ -49,15 +50,23 @@ export default class ClosedGroup extends Component<{}> {
 						/>
 					</View>
 				</View>
+				<View style={styles.buttoncontainer}>
+					<CircleButton style={styles.button} onPress={() => { console.log('klik') }}>
+						<Icon name="ios-person-add-outline" size={32} color="#222222" />
+					</CircleButton>
+					<CircleButton style={styles.button} onPress={() => { console.log('klik') }}>
+						<Icon name="ios-chatbubbles-outline" size={32} color="#222222" />
+					</CircleButton>
+				</View>
 				<View style={styles.contentContainer}>
 					<View style={{flexDirection:'row'}}>
 						<Text style={styles.head}>
 							Jakarta Runner
 						</Text>
-						<View style={{flexDirection:'row', alignItems: 'space-between', marginLeft: 10}}>
-							<Icon name="ios-lock" size={16} color="red" style={styles.pinhead} />
-							<Text style={{ color: 'red', fontWeight: 'normal', fontSize: 16, marginLeft: 5 }}>
-								Grup Terkunci
+						<View style={{flexDirection:'row', alignItems: 'space-between', marginLeft: 50}}>
+							<Icon name="ios-add-outline" size={20} color="white" style={styles.pinhead} />
+							<Text style={{ color: 'white', fontWeight: 'normal', fontSize: 16, marginLeft: 5 }}>
+								Tambah Jadwal
 							</Text>
 						</View>
 					</View>
@@ -71,13 +80,14 @@ export default class ClosedGroup extends Component<{}> {
 						<View style={styles.contactlist}>
 							<Icon name="ios-people" size={20} color="#e4ff64" style={styles.pin} />
 							<Text style={styles.about}>
-								2 Orang <Text style={styles.smaller}>8 max</Text>
+								8 Orang <Text style={styles.smaller}>max</Text>
 							</Text>
 						</View>
 					</View>
 				</View>
 				<View style={styles.formcontainer}>
 					<ScrollView horizontal>
+
 						<View style={styles.member}>
 							<View style={styles.smalltouch}>
 								<Image
@@ -107,14 +117,13 @@ export default class ClosedGroup extends Component<{}> {
 							<Text style={styles.membername}>Gita</Text>
 						</View>
 					</ScrollView>
-					<View style={styles.buttoncontainer} />
 				</View>
 			</View>
 		)
 	}
 }
 
-ClosedGroup.navigatorStyle = {
+MyGroup.navigatorStyle = {
 	statusBarColor: '#222222',
 	statusBarTextColorScheme: 'light',
 	navigationBarColor: 'black',
@@ -134,7 +143,7 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
 		marginLeft: 30,
-		marginTop: 70,
+		marginTop: 100,
 	},
 	imagecontainer: {
 		...StyleSheet.absoluteFillObject,
@@ -187,21 +196,23 @@ const styles = StyleSheet.create({
 		color: '#e4ff64'
 	},
 	buttoncontainer: {
-		alignItems: 'center',
-		justifyContent: 'center',
+		...StyleSheet.absoluteFillObject,
+		justifyContent: 'flex-end',
+		flexDirection: 'row',
+		marginTop: 110,
+		marginRight: 28,
 	},
 	button: {
-		padding: 30,
-		marginTop: 40,
+		backgroundColor: '#e4ff64',
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginLeft: 10,
 	},
 	contactcontainer: {
 		marginVertical: 10,
 	},
 	pin: {
 		marginRight: 10
-	},
-	pinhead: {
-		marginHorizontal: 5
 	},
 	contactlist: {
 		flexDirection: 'row',
@@ -213,6 +224,6 @@ const styles = StyleSheet.create({
 	},
 	smaller: {
 		fontSize: 14,
-		color: '#e4ff64'
+		color: 'red'
 	},
 })

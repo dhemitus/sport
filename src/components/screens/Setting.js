@@ -12,7 +12,7 @@ import SettingListItem from '../ui/list/SettingListItem'
 export default class Setting extends Component<{}> {
 
 	componentWillMount() {
-		this.props.navigator.setTitle({ title: 'WERESPORT' })
+//		this.props.navigator.setTitle({ title: 'WERESPORT' })
 	}
 
 	render() {

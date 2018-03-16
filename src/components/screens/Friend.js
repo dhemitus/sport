@@ -14,19 +14,21 @@ import {
 } from 'react-native'
 import LineGreyTextInput from '../ui/LineGreyTextInput'
 import BlockRoundButton from '../ui/button/BlockRoundButton'
+import CircleButton from '../ui/button/CircleButton'
 import Icon from 'react-native-vector-icons/Ionicons'
 const ImagePicker = NativeModules.ImageCropPicker
 
-export default class ClosedGroup extends Component<{}> {
+export default class Friend extends Component<{}> {
 
 	componentDidMount() {
 		console.log('run')
-		this.props.navigator.setTitle({ title: 'GABUNG GROUP' })
+		this.props.navigator.setTitle({ title: 'TEMAN' })
 	}
 
 	render() {
 		return (
 			<View style={styles.container}>
+				<ScrollView>
 				<View style={styles.imagecontainer}>
 					<Image
 						style={{
@@ -49,29 +51,64 @@ export default class ClosedGroup extends Component<{}> {
 						/>
 					</View>
 				</View>
-				<View style={styles.contentContainer}>
-					<View style={{flexDirection:'row'}}>
+				<View style={styles.buttoncontainer}>
+					<CircleButton style={styles.button} onPress={() => { console.log('klik') }}>
+						<Icon name="ios-person-add-outline" size={32} color="white" />
+					</CircleButton>
+					<CircleButton style={styles.button} onPress={() => { console.log('klik') }}>
+						<Icon name="ios-chatbubbles-outline" size={32} color="white" />
+					</CircleButton>
+				</View>
+				<View style={styles.profileContainer}>
+					<View style={styles.titlehead}>
 						<Text style={styles.head}>
-							Jakarta Runner
+							12
 						</Text>
-						<View style={{flexDirection:'row', alignItems: 'space-between', marginLeft: 10}}>
-							<Icon name="ios-lock" size={16} color="red" style={styles.pinhead} />
-							<Text style={{ color: 'red', fontWeight: 'normal', fontSize: 16, marginLeft: 5 }}>
-								Grup Terkunci
-							</Text>
-						</View>
+						<Text style={styles.underhead}>Teman</Text>
 					</View>
+					<View style={styles.titlelinehead}>
+						<Text style={styles.head}>
+							1
+						</Text>	
+						<Text style={styles.underhead}>Tahun</Text>
+					</View>
+					<View style={styles.titlehead}>
+						<Text style={styles.head}>
+							3
+						</Text>
+						<Text style={styles.underhead}>Olahraga</Text>
+					</View>
+				</View>
+				<View style={styles.contentContainer}>
+					<Text style={styles.head}>
+						GIta Safitri (Gita)
+					</Text>						
+					<Text style={styles.subhead}>
+						"Running Running"
+					</Text>						
 					<View style={styles.contactcontainer}>
 						<View style={styles.contactlist}>
-							<Icon name="ios-pin" size={20} color="#e4ff64" style={styles.pin} />
+							<Icon name="ios-refresh-circle-outline" size={20} color="#e4ff64" style={styles.pin} />
 							<Text style={styles.about}>
-								Ciputra World 1
+								25 Tahun
 							</Text>
 						</View>
 						<View style={styles.contactlist}>
-							<Icon name="ios-people" size={20} color="#e4ff64" style={styles.pin} />
+							<Icon name="ios-female-outline" size={20} color="#e4ff64" style={styles.pin} />
 							<Text style={styles.about}>
-								2 Orang <Text style={styles.smaller}>8 max</Text>
+								Wanita
+							</Text>
+						</View>
+						<View style={styles.contactlist}>
+							<Icon name="ios-clock-outline" size={20} color="#e4ff64" style={styles.pin} />
+							<Text style={styles.about}>
+								Rutin
+							</Text>
+						</View>
+						<View style={styles.contactlist}>
+							<Icon name="ios-walk-outline" size={20} color="#e4ff64" style={styles.pin} />
+							<Text style={styles.about}>
+								Hobi
 							</Text>
 						</View>
 					</View>
@@ -90,31 +127,20 @@ export default class ClosedGroup extends Component<{}> {
 									source={require('../../assets/images/banner1.jpg')}
 								/>
 							</View>
-							<Text style={styles.membername}>Taqy</Text>
-						</View>
-						<View style={styles.member}>
-							<View style={styles.smalltouch}>
-								<Image
-									style={{
-										height: 54,
-										width: 54,
-										borderRadius: 27,
-										resizeMode: Image.resizeMode.cover,
-									}}
-									source={require('../../assets/images/banner1.jpg')}
-								/>
+							<View>
+								<Text style={styles.membername}>Jakarta Runner</Text>
+								<Text style={styles.membersub}>3 Anggota</Text>
 							</View>
-							<Text style={styles.membername}>Gita</Text>
 						</View>
 					</ScrollView>
-					<View style={styles.buttoncontainer} />
 				</View>
+				</ScrollView>
 			</View>
 		)
 	}
 }
 
-ClosedGroup.navigatorStyle = {
+Friend.navigatorStyle = {
 	statusBarColor: '#222222',
 	statusBarTextColorScheme: 'light',
 	navigationBarColor: 'black',
@@ -130,11 +156,18 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		backgroundColor: '#222222',
 	},
+	profileContainer: {
+		flexDirection: 'row',
+		alignItems: 'flex-end',
+		justifyContent: 'flex-end',
+		marginRight: 10,
+		marginTop: 150,
+	},
 	contentContainer: {
 		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
 		marginLeft: 30,
-		marginTop: 70,
+		marginTop: 30,
 	},
 	imagecontainer: {
 		...StyleSheet.absoluteFillObject,
@@ -168,13 +201,21 @@ const styles = StyleSheet.create({
 		width: 56,
 	},
 	member: {
+		flexDirection: 'row',
 		alignItems: 'center',
+		justifyContent: 'flex-start',
 		marginRight: 30,
 	},
 	membername: {
-		fontSize: 14,
+		fontSize: 16,
+		color: '#e4ff64',
+		fontWeight: 'bold',
+		marginLeft: 10,
+	},
+	membersub: {
+		fontSize: 16,
 		color: 'white',
-		marginTop: 10,
+		marginLeft: 10,
 	},
 	formcontainer: {
 		marginHorizontal: 30,
@@ -184,15 +225,45 @@ const styles = StyleSheet.create({
 	head: {
 		fontSize: 20,
 		fontWeight: 'bold',
+		color: 'white'
+	},
+	subhead: {
+		fontSize: 18,
+		fontWeight: 'bold',
 		color: '#e4ff64'
 	},
-	buttoncontainer: {
+	underhead: {
+		fontSize: 16,
+		color: 'white'
+	},
+	titlehead: {
 		alignItems: 'center',
 		justifyContent: 'center',
+		paddingVertical: 5,
+		paddingHorizontal: 10,
+	},
+	titlelinehead: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingHorizontal: 10,
+		paddingVertical: 5,
+		borderLeftColor: 'white',
+		borderLeftWidth: 1,
+		borderRightColor: 'white',
+		borderRightWidth: 1,
+	},
+	buttoncontainer: {
+		...StyleSheet.absoluteFillObject,
+		justifyContent: 'flex-end',
+		flexDirection: 'row',
+		marginTop: 70,
+		marginRight: 28,
 	},
 	button: {
-		padding: 30,
-		marginTop: 40,
+		backgroundColor: '#222222',
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginLeft: 10,
 	},
 	contactcontainer: {
 		marginVertical: 10,
@@ -205,7 +276,7 @@ const styles = StyleSheet.create({
 	},
 	contactlist: {
 		flexDirection: 'row',
-		marginVertical: 10,
+		marginVertical: 5,
 	},
 	about: {
 		fontSize: 16,

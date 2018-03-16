@@ -10,7 +10,8 @@ import {
 export default class About extends Component<{}> {
 
 	componentWillMount() {
-		this.props.navigator.setTitle({ title: 'TENTANG WERESPORT' })
+		console.log(this.props)
+//		this.props.navigator.setTitle({ title: 'TENTANG WERESPORT' })
 	}
 
 	render() {

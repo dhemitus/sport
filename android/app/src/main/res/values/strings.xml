@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeReSport</string>
+    <string name="facebook_app_id">111250897657</string>
+    <string name="fb_login_protocol_scheme">fb111250897657</string>
 </resources>
